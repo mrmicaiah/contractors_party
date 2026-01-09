@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coordinator Signup | Contractors Party - April 18, 2026</title>
-    <meta name="description" content="Become an event coordinator for the Contractors Party Outdoor Home Show on April 18, 2026. Help us create an amazing experience!">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>Coordinator Signup | Meet the Contractors - April 18, 2026</title>
+    <meta name="description" content="Become an event coordinator for Meet the Contractors Outdoor Home Show on April 18, 2026. Help us create an amazing experience!">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,60 +12,113 @@
         :root { --sunset-orange: #FF6B35; --golden-yellow: #F7C948; --grass-green: #2D5A27; --sky-blue: #4A90D9; --cream: #FFF8E7; --charcoal: #2C2C2C; --white: #FFFFFF; --error: #DC3545; --success: #28A745; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--charcoal); min-height: 100vh; }
-        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; background: rgba(255, 248, 231, 0.95); backdrop-filter: blur(10px); border-bottom: 3px solid var(--sunset-orange); }
-        .logo { font-family: 'Dela Gothic One', cursive; font-size: 1.5rem; color: var(--sunset-orange); text-decoration: none; }
+        
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0.75rem 1.5rem; display: flex; justify-content: space-between; align-items: center; background: rgba(255, 248, 231, 0.95); backdrop-filter: blur(10px); border-bottom: 3px solid var(--sunset-orange); }
+        .logo { font-family: 'Dela Gothic One', cursive; font-size: 1.1rem; color: var(--sunset-orange); text-decoration: none; line-height: 1.2; }
         .logo span { color: var(--grass-green); }
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--charcoal); font-weight: 600; transition: color 0.3s; }
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--charcoal); font-weight: 600; transition: color 0.3s; font-size: 0.95rem; }
         .nav-links a:hover { color: var(--sunset-orange); }
-        .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; }
-        .page-hero { background: linear-gradient(135deg, var(--sky-blue) 0%, #6BB3E0 100%); padding: 8rem 2rem 4rem; text-align: center; position: relative; overflow: hidden; }
-        .page-hero h1 { font-family: 'Dela Gothic One', cursive; font-size: clamp(2.5rem, 6vw, 4rem); color: var(--white); margin-bottom: 1rem; position: relative; z-index: 10; }
-        .page-hero p { font-size: 1.3rem; color: var(--white); opacity: 0.95; max-width: 600px; margin: 0 auto; position: relative; z-index: 10; }
-        .main-content { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; }
-        .coordinator-info h2 { font-family: 'Dela Gothic One', cursive; font-size: 1.8rem; color: var(--grass-green); margin-bottom: 1.5rem; }
-        .info-card { background: var(--white); border-radius: 20px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-left: 5px solid var(--sky-blue); }
-        .info-card h3 { font-family: 'Dela Gothic One', cursive; font-size: 1.2rem; color: var(--sky-blue); margin-bottom: 1rem; }
+        .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; padding: 0.5rem; }
+        
+        .page-hero { background: linear-gradient(135deg, var(--sky-blue) 0%, #6BB3E0 100%); padding: 6rem 1.5rem 3rem; text-align: center; position: relative; overflow: hidden; }
+        .page-hero h1 { font-family: 'Dela Gothic One', cursive; font-size: clamp(1.8rem, 6vw, 3rem); color: var(--white); margin-bottom: 0.75rem; position: relative; z-index: 10; }
+        .page-hero p { font-size: clamp(1rem, 3vw, 1.2rem); color: var(--white); opacity: 0.95; max-width: 600px; margin: 0 auto; position: relative; z-index: 10; line-height: 1.5; }
+        
+        .main-content { max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem; display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; }
+        
+        .coordinator-info h2 { font-family: 'Dela Gothic One', cursive; font-size: 1.5rem; color: var(--grass-green); margin-bottom: 1.25rem; }
+        .info-card { background: var(--white); border-radius: 16px; padding: 1.5rem; margin-bottom: 1.25rem; box-shadow: 0 8px 25px rgba(0,0,0,0.05); border-left: 4px solid var(--sky-blue); }
+        .info-card h3 { font-family: 'Dela Gothic One', cursive; font-size: 1.1rem; color: var(--sky-blue); margin-bottom: 0.75rem; }
         .info-card ul { list-style: none; padding: 0; }
-        .info-card li { padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; align-items: flex-start; gap: 0.75rem; line-height: 1.6; }
+        .info-card li { padding: 0.6rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; align-items: flex-start; gap: 0.6rem; line-height: 1.5; font-size: 0.95rem; }
         .info-card li:last-child { border-bottom: none; }
-        .info-card li::before { content: '★'; color: var(--golden-yellow); font-weight: bold; }
-        .highlight-box { background: linear-gradient(135deg, var(--grass-green) 0%, #3d7a36 100%); color: var(--white); border-radius: 20px; padding: 2rem; text-align: center; }
-        .highlight-box h3 { font-family: 'Dela Gothic One', cursive; font-size: 1.3rem; margin-bottom: 1rem; }
-        .highlight-box p { opacity: 0.95; line-height: 1.7; }
-        .form-section { background: var(--white); border-radius: 24px; padding: 3rem; box-shadow: 0 15px 50px rgba(0,0,0,0.08); border-top: 6px solid var(--sky-blue); }
-        .form-section h2 { font-family: 'Dela Gothic One', cursive; font-size: 1.8rem; color: var(--grass-green); margin-bottom: 0.5rem; text-align: center; }
-        .form-section > p { text-align: center; color: var(--charcoal); opacity: 0.7; margin-bottom: 2rem; }
-        .form-group { margin-bottom: 1.5rem; }
+        .info-card li::before { content: '★'; color: var(--golden-yellow); font-weight: bold; flex-shrink: 0; }
+        
+        .highlight-box { background: linear-gradient(135deg, var(--grass-green) 0%, #3d7a36 100%); color: var(--white); border-radius: 16px; padding: 1.5rem; text-align: center; }
+        .highlight-box h3 { font-family: 'Dela Gothic One', cursive; font-size: 1.1rem; margin-bottom: 0.75rem; }
+        .highlight-box p { opacity: 0.95; line-height: 1.6; font-size: 0.95rem; }
+        
+        .form-section { background: var(--white); border-radius: 20px; padding: 2rem 1.5rem; box-shadow: 0 12px 40px rgba(0,0,0,0.08); border-top: 5px solid var(--sky-blue); }
+        .form-section h2 { font-family: 'Dela Gothic One', cursive; font-size: 1.5rem; color: var(--grass-green); margin-bottom: 0.4rem; text-align: center; }
+        .form-section > p { text-align: center; color: var(--charcoal); opacity: 0.7; margin-bottom: 1.5rem; font-size: 0.95rem; }
+        .form-group { margin-bottom: 1.25rem; }
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-        label { display: block; font-weight: 600; margin-bottom: 0.5rem; }
+        label { display: block; font-weight: 600; margin-bottom: 0.4rem; font-size: 0.95rem; }
         label .required { color: var(--error); }
-        input, textarea, select { width: 100%; padding: 1rem 1.25rem; border: 2px solid #E0E0E0; border-radius: 12px; font-size: 1rem; font-family: inherit; transition: border-color 0.3s, box-shadow 0.3s; background: var(--white); }
-        input:focus, textarea:focus, select:focus { outline: none; border-color: var(--sky-blue); box-shadow: 0 0 0 4px rgba(74, 144, 217, 0.1); }
+        input, textarea, select { width: 100%; padding: 0.85rem 1rem; border: 2px solid #E0E0E0; border-radius: 10px; font-size: 1rem; font-family: inherit; transition: border-color 0.3s, box-shadow 0.3s; background: var(--white); }
+        input:focus, textarea:focus, select:focus { outline: none; border-color: var(--sky-blue); box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.1); }
         input.error, select.error { border-color: var(--error); }
-        .error-message { color: var(--error); font-size: 0.85rem; margin-top: 0.5rem; display: none; }
+        .error-message { color: var(--error); font-size: 0.8rem; margin-top: 0.4rem; display: none; }
         input.error + .error-message, select.error + .error-message { display: block; }
-        textarea { resize: vertical; min-height: 100px; }
-        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; font-size: 1.1rem; text-decoration: none; transition: all 0.3s; border: none; cursor: pointer; width: 100%; }
+        textarea { resize: vertical; min-height: 90px; }
+        
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; padding: 0.9rem 1.75rem; border-radius: 50px; font-weight: 700; font-size: 1rem; text-decoration: none; transition: all 0.3s; border: none; cursor: pointer; width: 100%; }
         .btn-primary { background: var(--sky-blue); color: var(--white); box-shadow: 0 4px 15px rgba(74, 144, 217, 0.4); }
         .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(74, 144, 217, 0.5); }
         .btn-primary:disabled { background: #ccc; cursor: not-allowed; transform: none; box-shadow: none; }
-        .form-status { padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; display: none; }
+        
+        .form-status { padding: 1.25rem; border-radius: 12px; margin-bottom: 1.5rem; display: none; }
         .form-status.success { display: block; background: rgba(40, 167, 69, 0.1); border: 2px solid var(--success); color: var(--success); text-align: center; }
-        .form-status h3 { font-family: 'Dela Gothic One', cursive; margin-bottom: 0.5rem; }
-        footer { background: var(--charcoal); color: var(--white); padding: 3rem 2rem 2rem; text-align: center; }
-        .footer-logo { font-family: 'Dela Gothic One', cursive; font-size: 1.5rem; color: var(--golden-yellow); margin-bottom: 1rem; }
-        .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
-        .footer-links a { color: var(--white); text-decoration: none; opacity: 0.8; }
+        .form-status h3 { font-family: 'Dela Gothic One', cursive; margin-bottom: 0.4rem; font-size: 1.1rem; }
+        
+        footer { background: var(--charcoal); color: var(--white); padding: 2.5rem 1.5rem 1.5rem; text-align: center; }
+        .footer-logo { font-family: 'Dela Gothic One', cursive; font-size: 1.25rem; color: var(--golden-yellow); margin-bottom: 0.75rem; }
+        .footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+        .footer-links a { color: var(--white); text-decoration: none; opacity: 0.8; font-size: 0.9rem; }
         .footer-links a:hover { opacity: 1; color: var(--golden-yellow); }
-        .footer-note { font-size: 0.9rem; opacity: 0.5; }
-        @media (max-width: 900px) { .main-content { grid-template-columns: 1fr; gap: 2rem; } .coordinator-info { order: 2; } .form-section { order: 1; } }
-        @media (max-width: 768px) { .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--cream); flex-direction: column; padding: 2rem; gap: 1rem; border-bottom: 3px solid var(--sunset-orange); } .nav-links.active { display: flex; } .mobile-menu-btn { display: block; } .form-row { grid-template-columns: 1fr; } .form-section { padding: 2rem 1.5rem; } }
+        .footer-note { font-size: 0.8rem; opacity: 0.5; }
+        
+        @media (max-width: 900px) { 
+            .main-content { grid-template-columns: 1fr; gap: 2rem; } 
+            .coordinator-info { order: 2; } 
+            .form-section { order: 1; } 
+        }
+        
+        @media (max-width: 768px) { 
+            nav { padding: 0.6rem 1rem; }
+            .logo { font-size: 0.95rem; }
+            .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--cream); flex-direction: column; padding: 1.5rem; gap: 1rem; border-bottom: 3px solid var(--sunset-orange); box-shadow: 0 10px 30px rgba(0,0,0,0.1); } 
+            .nav-links.active { display: flex; } 
+            .mobile-menu-btn { display: block; } 
+            
+            .page-hero { padding: 5rem 1rem 2.5rem; }
+            .page-hero h1 { font-size: 1.6rem; }
+            .page-hero p { font-size: 0.95rem; }
+            
+            .main-content { padding: 2rem 1rem; gap: 1.5rem; }
+            
+            .form-row { grid-template-columns: 1fr; } 
+            .form-section { padding: 1.5rem 1.25rem; }
+            .form-section h2 { font-size: 1.3rem; }
+            
+            .coordinator-info h2 { font-size: 1.3rem; }
+            .info-card { padding: 1.25rem; }
+            .info-card h3 { font-size: 1rem; }
+            .info-card li { font-size: 0.9rem; padding: 0.5rem 0; }
+            
+            .highlight-box { padding: 1.25rem; }
+            .highlight-box h3 { font-size: 1rem; }
+            .highlight-box p { font-size: 0.9rem; }
+            
+            input, textarea, select { padding: 0.75rem 0.9rem; font-size: 16px; }
+            .btn { padding: 0.8rem 1.5rem; font-size: 0.95rem; }
+            
+            footer { padding: 2rem 1rem 1rem; }
+            .footer-logo { font-size: 1.1rem; }
+            .footer-links { gap: 1rem; }
+            .footer-links a { font-size: 0.85rem; }
+        }
+        
+        @media (max-width: 380px) {
+            .page-hero h1 { font-size: 1.4rem; }
+            .form-section { padding: 1.25rem 1rem; }
+        }
     </style>
 </head>
 <body>
     <nav>
-        <a href="index.html" class="logo">🎪 CONTRACTORS<span>PARTY</span></a>
+        <a href="index.html" class="logo">🎪 MEET THE<span> CONTRACTORS</span></a>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="index.html#highlights">Highlights</a></li>
@@ -75,10 +127,12 @@
         </ul>
         <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
     </nav>
+    
     <section class="page-hero">
         <h1>📋 Event Coordinators</h1>
         <p>Help us make this outdoor home show an unforgettable experience for everyone!</p>
     </section>
+    
     <main class="main-content">
         <aside class="coordinator-info">
             <h2>Coordinator Information</h2>
@@ -87,9 +141,9 @@
                 <ul>
                     <li>Help with event setup and breakdown</li>
                     <li>Direct vendors to their designated spots</li>
-                    <li>Assist attendees with questions and navigation</li>
+                    <li>Assist attendees with questions</li>
                     <li>Coordinate with entertainment and food vendors</li>
-                    <li>Ensure everything runs smoothly throughout the day</li>
+                    <li>Ensure everything runs smoothly</li>
                 </ul>
             </div>
             <div class="info-card">
@@ -97,16 +151,17 @@
                 <ul>
                     <li>Be part of an amazing community event</li>
                     <li>Network with local contractors and businesses</li>
-                    <li>Help send kids to Space Camp through Pace</li>
+                    <li>Help send kids to Space Camp</li>
                     <li>Coordinator T-shirt and event perks</li>
                     <li>A fun day outdoors with great people!</li>
                 </ul>
             </div>
             <div class="highlight-box">
                 <h3>🚀 Making Dreams Come True</h3>
-                <p>Your help ensures all proceeds go toward sending kids to Space Camp through the Pace program. Together, we're making a real difference!</p>
+                <p>Your help ensures all proceeds go toward sending kids to Space Camp through the Pace program!</p>
             </div>
         </aside>
+        
         <div class="form-section">
             <h2>Sign Up to Help</h2>
             <p>Join our coordinator team for April 18, 2026</p>
@@ -147,36 +202,40 @@
                 </div>
                 <div class="form-group">
                     <label for="experience">Relevant Experience (Optional)</label>
-                    <textarea id="experience" name="experience" placeholder="Tell us about any event coordination, volunteer, or relevant experience you have..."></textarea>
+                    <textarea id="experience" name="experience" placeholder="Tell us about any event coordination or volunteer experience..."></textarea>
                 </div>
                 <div class="form-group">
                     <label for="interests">Areas of Interest (Optional)</label>
-                    <textarea id="interests" name="interests" placeholder="What areas would you like to help with? (e.g., vendor coordination, attendee assistance, entertainment liaison, etc.)"></textarea>
+                    <textarea id="interests" name="interests" placeholder="What areas would you like to help with? (vendor coordination, attendee assistance, etc.)"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary" id="submitBtn"><span>📋 Sign Up as Coordinator</span></button>
             </form>
         </div>
     </main>
+    
     <footer>
-        <div class="footer-logo">🎪 CONTRACTORS PARTY</div>
+        <div class="footer-logo">🎪 MEET THE CONTRACTORS</div>
         <div class="footer-links">
             <a href="index.html">Home</a>
             <a href="vendor-registration.html">Vendor Registration</a>
             <a href="coordinator-signup.html">Coordinator Signup</a>
         </div>
-        <p class="footer-note">© 2026 Contractors Party. All proceeds benefit Space Camp through the Pace program.</p>
+        <p class="footer-note">© 2026 Meet the Contractors. All proceeds benefit Space Camp through the Pace program.</p>
     </footer>
+    
     <script>
         function toggleMenu() { document.querySelector('.nav-links').classList.toggle('active'); }
         const form = document.getElementById('coordinatorForm');
         const submitBtn = document.getElementById('submitBtn');
         const formStatus = document.getElementById('formStatus');
+        
         document.getElementById('phone').addEventListener('input', function(e) {
             let value = e.target.value.replace(/\D/g, '');
             if (value.length >= 6) value = '(' + value.substring(0, 3) + ') ' + value.substring(3, 6) + '-' + value.substring(6, 10);
             else if (value.length >= 3) value = '(' + value.substring(0, 3) + ') ' + value.substring(3);
             e.target.value = value;
         });
+        
         function validateForm() {
             let isValid = true;
             form.querySelectorAll('[required]').forEach(field => {
@@ -186,37 +245,38 @@
             if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) { email.classList.add('error'); isValid = false; }
             return isValid;
         }
+        
         form.querySelectorAll('input, textarea, select').forEach(field => {
             field.addEventListener('input', () => { field.classList.remove('error'); });
             field.addEventListener('change', () => { field.classList.remove('error'); });
         });
+        
         form.addEventListener('submit', async function(e) {
             e.preventDefault();
             if (!validateForm()) return;
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<span>Submitting...</span>';
-            const formData = {
-                firstName: document.getElementById('firstName').value.trim(),
-                lastName: document.getElementById('lastName').value.trim(),
-                email: document.getElementById('email').value.trim(),
-                phone: document.getElementById('phone').value.trim(),
-                availability: document.getElementById('availability').value,
-                experience: document.getElementById('experience').value.trim(),
-                interests: document.getElementById('interests').value.trim()
-            };
             try {
                 await fetch('https://email-bot-server.micaiah-tasks.workers.dev/api/subscribe', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        listId: 'contractors-party-coordinators',
-                        email: formData.email,
-                        fields: { first_name: formData.firstName, last_name: formData.lastName, phone: formData.phone, availability: formData.availability, experience: formData.experience, interests: formData.interests, registration_type: 'coordinator' }
+                        listId: 'meet-the-contractors-coordinators',
+                        email: document.getElementById('email').value.trim(),
+                        fields: { 
+                            first_name: document.getElementById('firstName').value.trim(), 
+                            last_name: document.getElementById('lastName').value.trim(), 
+                            phone: document.getElementById('phone').value.trim(), 
+                            availability: document.getElementById('availability').value, 
+                            experience: document.getElementById('experience').value.trim(), 
+                            interests: document.getElementById('interests').value.trim(), 
+                            registration_type: 'coordinator' 
+                        }
                     })
                 });
             } catch (error) {}
             formStatus.className = 'form-status success';
-            formStatus.innerHTML = '<h3>🎉 Thank You!</h3><p>Your coordinator signup has been received! We\'ll be in touch soon with more details about the event.</p>';
+            formStatus.innerHTML = '<h3>🎉 Thank You!</h3><p>Your signup has been received! We\'ll be in touch soon.</p>';
             form.reset();
             submitBtn.disabled = false;
             submitBtn.innerHTML = '<span>📋 Sign Up as Coordinator</span>';
