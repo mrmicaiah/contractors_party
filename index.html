@@ -92,7 +92,7 @@
             align-items: center;
             justify-content: center;
             padding: 6rem 2rem 4rem;
-            overflow: hidden;
+            overflow: visible;
         }
         
         .sun {
@@ -105,6 +105,7 @@
             border-radius: 50%;
             box-shadow: 0 0 60px var(--golden-yellow);
             animation: pulse 4s ease-in-out infinite;
+            z-index: 1;
         }
         
         @keyframes pulse {
@@ -120,12 +121,14 @@
             height: 200px;
             background: var(--grass-green);
             clip-path: polygon(0 60%, 2% 55%, 4% 60%, 6% 50%, 8% 58%, 10% 48%, 12% 55%, 14% 45%, 16% 52%, 18% 42%, 20% 50%, 22% 40%, 24% 48%, 26% 38%, 28% 45%, 30% 35%, 32% 42%, 34% 32%, 36% 40%, 38% 30%, 40% 38%, 42% 28%, 44% 35%, 46% 25%, 48% 32%, 50% 22%, 52% 30%, 54% 20%, 56% 28%, 58% 18%, 60% 25%, 62% 15%, 64% 22%, 66% 12%, 68% 20%, 70% 10%, 72% 18%, 74% 8%, 76% 15%, 78% 5%, 80% 12%, 82% 2%, 84% 10%, 86% 0%, 88% 8%, 90% 5%, 92% 12%, 94% 8%, 96% 15%, 98% 10%, 100% 18%, 100% 100%, 0 100%);
+            z-index: 1;
         }
         
         .hero-content {
             text-align: center;
-            z-index: 10;
+            z-index: 100;
             max-width: 900px;
+            position: relative;
         }
         
         .event-badge {
@@ -167,6 +170,7 @@
             position: relative;
             display: inline-block;
             margin-bottom: 2rem;
+            z-index: 200;
         }
         
         .event-date {
@@ -218,7 +222,7 @@
             opacity: 0;
             visibility: hidden;
             transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
-            z-index: 100;
+            z-index: 500;
         }
         
         .calendar-dropdown.active {
@@ -308,6 +312,8 @@
             padding: 1rem 2rem;
             text-align: center;
             font-weight: 500;
+            position: relative;
+            z-index: 10;
         }
         
         .info-section {
