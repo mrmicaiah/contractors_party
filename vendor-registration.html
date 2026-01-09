@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Registration | Contractors Party - April 18, 2026</title>
+    <meta name="description" content="Register as a vendor for the Contractors Party Outdoor Home Show on April 18, 2026. Showcase your work to homeowners and connect with potential clients.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --sunset-orange: #FF6B35; --golden-yellow: #F7C948; --grass-green: #2D5A27; --sky-blue: #4A90D9; --cream: #FFF8E7; --charcoal: #2C2C2C; --white: #FFFFFF; --error: #DC3545; --success: #28A745; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--charcoal); min-height: 100vh; }
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; background: rgba(255, 248, 231, 0.95); backdrop-filter: blur(10px); border-bottom: 3px solid var(--sunset-orange); }
+        .logo { font-family: 'Dela Gothic One', cursive; font-size: 1.5rem; color: var(--sunset-orange); text-decoration: none; }
+        .logo span { color: var(--grass-green); }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--charcoal); font-weight: 600; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--sunset-orange); }
+        .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+        .page-hero { background: linear-gradient(135deg, var(--sunset-orange) 0%, #FF8F6B 100%); padding: 8rem 2rem 4rem; text-align: center; position: relative; overflow: hidden; }
+        .page-hero h1 { font-family: 'Dela Gothic One', cursive; font-size: clamp(2.5rem, 6vw, 4rem); color: var(--white); margin-bottom: 1rem; position: relative; z-index: 10; }
+        .page-hero p { font-size: 1.3rem; color: var(--white); opacity: 0.95; max-width: 600px; margin: 0 auto; position: relative; z-index: 10; }
+        .main-content { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; }
+        .vendor-info h2 { font-family: 'Dela Gothic One', cursive; font-size: 1.8rem; color: var(--grass-green); margin-bottom: 1.5rem; }
+        .info-card { background: var(--white); border-radius: 20px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-left: 5px solid var(--golden-yellow); }
+        .info-card h3 { font-family: 'Dela Gothic One', cursive; font-size: 1.2rem; color: var(--sunset-orange); margin-bottom: 1rem; }
+        .info-card ul { list-style: none; padding: 0; }
+        .info-card li { padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; align-items: flex-start; gap: 0.75rem; line-height: 1.6; }
+        .info-card li:last-child { border-bottom: none; }
+        .info-card li::before { content: '✓'; color: var(--grass-green); font-weight: bold; }
+        .form-section { background: var(--white); border-radius: 24px; padding: 3rem; box-shadow: 0 15px 50px rgba(0,0,0,0.08); border-top: 6px solid var(--sunset-orange); }
+        .form-section h2 { font-family: 'Dela Gothic One', cursive; font-size: 1.8rem; color: var(--grass-green); margin-bottom: 0.5rem; text-align: center; }
+        .form-section > p { text-align: center; color: var(--charcoal); opacity: 0.7; margin-bottom: 2rem; }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        label { display: block; font-weight: 600; margin-bottom: 0.5rem; }
+        label .required { color: var(--error); }
+        input, textarea { width: 100%; padding: 1rem 1.25rem; border: 2px solid #E0E0E0; border-radius: 12px; font-size: 1rem; font-family: inherit; transition: border-color 0.3s, box-shadow 0.3s; }
+        input:focus, textarea:focus { outline: none; border-color: var(--sunset-orange); box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1); }
+        input.error { border-color: var(--error); }
+        .error-message { color: var(--error); font-size: 0.85rem; margin-top: 0.5rem; display: none; }
+        input.error + .error-message { display: block; }
+        textarea { resize: vertical; min-height: 100px; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; font-size: 1.1rem; text-decoration: none; transition: all 0.3s; border: none; cursor: pointer; width: 100%; }
+        .btn-primary { background: var(--sunset-orange); color: var(--white); box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(255, 107, 53, 0.5); }
+        .btn-primary:disabled { background: #ccc; cursor: not-allowed; transform: none; box-shadow: none; }
+        .form-status { padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; display: none; }
+        .form-status.success { display: block; background: rgba(40, 167, 69, 0.1); border: 2px solid var(--success); color: var(--success); text-align: center; }
+        .form-status h3 { font-family: 'Dela Gothic One', cursive; margin-bottom: 0.5rem; }
+        footer { background: var(--charcoal); color: var(--white); padding: 3rem 2rem 2rem; text-align: center; }
+        .footer-logo { font-family: 'Dela Gothic One', cursive; font-size: 1.5rem; color: var(--golden-yellow); margin-bottom: 1rem; }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .footer-links a { color: var(--white); text-decoration: none; opacity: 0.8; }
+        .footer-links a:hover { opacity: 1; color: var(--golden-yellow); }
+        .footer-note { font-size: 0.9rem; opacity: 0.5; }
+        @media (max-width: 900px) { .main-content { grid-template-columns: 1fr; gap: 2rem; } .vendor-info { order: 2; } .form-section { order: 1; } }
+        @media (max-width: 768px) { .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--cream); flex-direction: column; padding: 2rem; gap: 1rem; border-bottom: 3px solid var(--sunset-orange); } .nav-links.active { display: flex; } .mobile-menu-btn { display: block; } .form-row { grid-template-columns: 1fr; } .form-section { padding: 2rem 1.5rem; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">🎪 CONTRACTORS<span>PARTY</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#highlights">Highlights</a></li>
+            <li><a href="vendor-registration.html">Vendors</a></li>
+            <li><a href="coordinator-signup.html">Coordinators</a></li>
+        </ul>
+        <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+    </nav>
+    <section class="page-hero">
+        <h1>🔨 Vendor Registration</h1>
+        <p>Showcase your work to homeowners and connect with potential clients at our unique outdoor home show!</p>
+    </section>
+    <main class="main-content">
+        <aside class="vendor-info">
+            <h2>Vendor Information</h2>
+            <div class="info-card">
+                <h3>📍 Your Setup</h3>
+                <ul>
+                    <li>Park your work vehicle in your designated spot</li>
+                    <li>Set up your table directly behind your vehicle</li>
+                    <li>Use any tools or work-related items as props</li>
+                    <li>Your display doesn't need to be elaborate</li>
+                    <li>Keep your area professional, clean, and presentable</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>🎯 What to Expect</h3>
+                <ul>
+                    <li>Face-to-face time with homeowners looking for contractors</li>
+                    <li>Family-friendly atmosphere with entertainment</li>
+                    <li>Live music and food trucks all day</li>
+                    <li>Network with other local professionals</li>
+                    <li>Support a great cause — Space Camp for kids!</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>📅 Event Details</h3>
+                <ul>
+                    <li><strong>Date:</strong> Saturday, April 18, 2026</li>
+                    <li><strong>Location:</strong> TBA (outdoor venue)</li>
+                    <li><strong>Weather:</strong> Outdoor event, weather permitting</li>
+                </ul>
+            </div>
+        </aside>
+        <div class="form-section">
+            <h2>Register Your Business</h2>
+            <p>Complete the form below to secure your vendor spot</p>
+            <div id="formStatus" class="form-status"></div>
+            <form id="vendorForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name <span class="required">*</span></label>
+                        <input type="text" id="firstName" name="firstName" required>
+                        <div class="error-message">Please enter your first name</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name <span class="required">*</span></label>
+                        <input type="text" id="lastName" name="lastName" required>
+                        <div class="error-message">Please enter your last name</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="companyName">Company Name <span class="required">*</span></label>
+                    <input type="text" id="companyName" name="companyName" required>
+                    <div class="error-message">Please enter your company name</div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error-message">Please enter a valid email address</div>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number <span class="required">*</span></label>
+                    <input type="tel" id="phone" name="phone" required placeholder="(256) 555-1234">
+                    <div class="error-message">Please enter your phone number</div>
+                </div>
+                <div class="form-group">
+                    <label for="services">Services/Trade (Optional)</label>
+                    <textarea id="services" name="services" placeholder="Briefly describe your services (e.g., HVAC, Roofing, Plumbing, General Contractor, etc.)"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" id="submitBtn"><span>🎪 Register as Vendor</span></button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-logo">🎪 CONTRACTORS PARTY</div>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="vendor-registration.html">Vendor Registration</a>
+            <a href="coordinator-signup.html">Coordinator Signup</a>
+        </div>
+        <p class="footer-note">© 2026 Contractors Party. All proceeds benefit Space Camp through the Pace program.</p>
+    </footer>
+    <script>
+        function toggleMenu() { document.querySelector('.nav-links').classList.toggle('active'); }
+        const form = document.getElementById('vendorForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const formStatus = document.getElementById('formStatus');
+        document.getElementById('phone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 6) value = '(' + value.substring(0, 3) + ') ' + value.substring(3, 6) + '-' + value.substring(6, 10);
+            else if (value.length >= 3) value = '(' + value.substring(0, 3) + ') ' + value.substring(3);
+            e.target.value = value;
+        });
+        function validateForm() {
+            let isValid = true;
+            form.querySelectorAll('[required]').forEach(field => {
+                if (!field.value.trim()) { field.classList.add('error'); isValid = false; } else { field.classList.remove('error'); }
+            });
+            const email = document.getElementById('email');
+            if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) { email.classList.add('error'); isValid = false; }
+            return isValid;
+        }
+        form.querySelectorAll('input, textarea').forEach(field => { field.addEventListener('input', () => { field.classList.remove('error'); }); });
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            if (!validateForm()) return;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span>Submitting...</span>';
+            const formData = {
+                firstName: document.getElementById('firstName').value.trim(),
+                lastName: document.getElementById('lastName').value.trim(),
+                companyName: document.getElementById('companyName').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                phone: document.getElementById('phone').value.trim(),
+                services: document.getElementById('services').value.trim()
+            };
+            try {
+                await fetch('https://email-bot-server.micaiah-tasks.workers.dev/api/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        listId: 'contractors-party-vendors',
+                        email: formData.email,
+                        fields: { first_name: formData.firstName, last_name: formData.lastName, company_name: formData.companyName, phone: formData.phone, services: formData.services, registration_type: 'vendor' }
+                    })
+                });
+            } catch (error) {}
+            formStatus.className = 'form-status success';
+            formStatus.innerHTML = '<h3>🎉 Registration Received!</h3><p>Thank you for registering as a vendor! We\'ll be in touch with more details about the event.</p>';
+            form.reset();
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<span>🎪 Register as Vendor</span>';
+            formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+    </script>
+</body>
+</html>
