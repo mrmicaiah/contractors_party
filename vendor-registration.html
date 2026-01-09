@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vendor Registration | Meet the Contractors - April 18, 2026</title>
     <meta name="description" content="Register as a vendor for Meet the Contractors Outdoor Home Show on April 18, 2026. Showcase your work to homeowners and connect with potential clients.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -12,7 +13,6 @@
         :root { --sunset-orange: #FF6B35; --golden-yellow: #F7C948; --grass-green: #2D5A27; --sky-blue: #4A90D9; --cream: #FFF8E7; --charcoal: #2C2C2C; --white: #FFFFFF; --error: #DC3545; --success: #28A745; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--charcoal); min-height: 100vh; }
-        
         nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0.75rem 1.5rem; display: flex; justify-content: space-between; align-items: center; background: rgba(255, 248, 231, 0.95); backdrop-filter: blur(10px); border-bottom: 3px solid var(--sunset-orange); }
         .logo { font-family: 'Dela Gothic One', cursive; font-size: 1.1rem; color: var(--sunset-orange); text-decoration: none; line-height: 1.2; }
         .logo span { color: var(--grass-green); }
@@ -20,13 +20,10 @@
         .nav-links a { text-decoration: none; color: var(--charcoal); font-weight: 600; transition: color 0.3s; font-size: 0.95rem; }
         .nav-links a:hover { color: var(--sunset-orange); }
         .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; padding: 0.5rem; }
-        
         .page-hero { background: linear-gradient(135deg, var(--sunset-orange) 0%, #FF8F6B 100%); padding: 6rem 1.5rem 3rem; text-align: center; position: relative; overflow: hidden; }
         .page-hero h1 { font-family: 'Dela Gothic One', cursive; font-size: clamp(1.8rem, 6vw, 3rem); color: var(--white); margin-bottom: 0.75rem; position: relative; z-index: 10; }
         .page-hero p { font-size: clamp(1rem, 3vw, 1.2rem); color: var(--white); opacity: 0.95; max-width: 600px; margin: 0 auto; position: relative; z-index: 10; line-height: 1.5; }
-        
         .main-content { max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem; display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; }
-        
         .vendor-info h2 { font-family: 'Dela Gothic One', cursive; font-size: 1.5rem; color: var(--grass-green); margin-bottom: 1.25rem; }
         .info-card { background: var(--white); border-radius: 16px; padding: 1.5rem; margin-bottom: 1.25rem; box-shadow: 0 8px 25px rgba(0,0,0,0.05); border-left: 4px solid var(--golden-yellow); }
         .info-card h3 { font-family: 'Dela Gothic One', cursive; font-size: 1.1rem; color: var(--sunset-orange); margin-bottom: 0.75rem; }
@@ -34,7 +31,6 @@
         .info-card li { padding: 0.6rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; align-items: flex-start; gap: 0.6rem; line-height: 1.5; font-size: 0.95rem; }
         .info-card li:last-child { border-bottom: none; }
         .info-card li::before { content: '✓'; color: var(--grass-green); font-weight: bold; flex-shrink: 0; }
-        
         .form-section { background: var(--white); border-radius: 20px; padding: 2rem 1.5rem; box-shadow: 0 12px 40px rgba(0,0,0,0.08); border-top: 5px solid var(--sunset-orange); }
         .form-section h2 { font-family: 'Dela Gothic One', cursive; font-size: 1.5rem; color: var(--grass-green); margin-bottom: 0.4rem; text-align: center; }
         .form-section > p { text-align: center; color: var(--charcoal); opacity: 0.7; margin-bottom: 1.5rem; font-size: 0.95rem; }
@@ -48,64 +44,32 @@
         .error-message { color: var(--error); font-size: 0.8rem; margin-top: 0.4rem; display: none; }
         input.error + .error-message { display: block; }
         textarea { resize: vertical; min-height: 90px; }
-        
         .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; padding: 0.9rem 1.75rem; border-radius: 50px; font-weight: 700; font-size: 1rem; text-decoration: none; transition: all 0.3s; border: none; cursor: pointer; width: 100%; }
         .btn-primary { background: var(--sunset-orange); color: var(--white); box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4); }
         .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(255, 107, 53, 0.5); }
         .btn-primary:disabled { background: #ccc; cursor: not-allowed; transform: none; box-shadow: none; }
-        
         .form-status { padding: 1.25rem; border-radius: 12px; margin-bottom: 1.5rem; display: none; }
         .form-status.success { display: block; background: rgba(40, 167, 69, 0.1); border: 2px solid var(--success); color: var(--success); text-align: center; }
         .form-status h3 { font-family: 'Dela Gothic One', cursive; margin-bottom: 0.4rem; font-size: 1.1rem; }
-        
         footer { background: var(--charcoal); color: var(--white); padding: 2.5rem 1.5rem 1.5rem; text-align: center; }
         .footer-logo { font-family: 'Dela Gothic One', cursive; font-size: 1.25rem; color: var(--golden-yellow); margin-bottom: 0.75rem; }
         .footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
         .footer-links a { color: var(--white); text-decoration: none; opacity: 0.8; font-size: 0.9rem; }
         .footer-links a:hover { opacity: 1; color: var(--golden-yellow); }
         .footer-note { font-size: 0.8rem; opacity: 0.5; }
-        
-        @media (max-width: 900px) { 
-            .main-content { grid-template-columns: 1fr; gap: 2rem; } 
-            .vendor-info { order: 2; } 
-            .form-section { order: 1; } 
-        }
-        
+        @media (max-width: 900px) { .main-content { grid-template-columns: 1fr; gap: 2rem; } .vendor-info { order: 2; } .form-section { order: 1; } }
         @media (max-width: 768px) { 
-            nav { padding: 0.6rem 1rem; }
-            .logo { font-size: 0.95rem; }
+            nav { padding: 0.6rem 1rem; } .logo { font-size: 0.95rem; }
             .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--cream); flex-direction: column; padding: 1.5rem; gap: 1rem; border-bottom: 3px solid var(--sunset-orange); box-shadow: 0 10px 30px rgba(0,0,0,0.1); } 
-            .nav-links.active { display: flex; } 
-            .mobile-menu-btn { display: block; } 
-            
-            .page-hero { padding: 5rem 1rem 2.5rem; }
-            .page-hero h1 { font-size: 1.6rem; }
-            .page-hero p { font-size: 0.95rem; }
-            
+            .nav-links.active { display: flex; } .mobile-menu-btn { display: block; } 
+            .page-hero { padding: 5rem 1rem 2.5rem; } .page-hero h1 { font-size: 1.6rem; } .page-hero p { font-size: 0.95rem; }
             .main-content { padding: 2rem 1rem; gap: 1.5rem; }
-            
-            .form-row { grid-template-columns: 1fr; } 
-            .form-section { padding: 1.5rem 1.25rem; }
-            .form-section h2 { font-size: 1.3rem; }
-            
-            .vendor-info h2 { font-size: 1.3rem; }
-            .info-card { padding: 1.25rem; }
-            .info-card h3 { font-size: 1rem; }
-            .info-card li { font-size: 0.9rem; padding: 0.5rem 0; }
-            
-            input, textarea { padding: 0.75rem 0.9rem; font-size: 16px; }
-            .btn { padding: 0.8rem 1.5rem; font-size: 0.95rem; }
-            
-            footer { padding: 2rem 1rem 1rem; }
-            .footer-logo { font-size: 1.1rem; }
-            .footer-links { gap: 1rem; }
-            .footer-links a { font-size: 0.85rem; }
+            .form-row { grid-template-columns: 1fr; } .form-section { padding: 1.5rem 1.25rem; } .form-section h2 { font-size: 1.3rem; }
+            .vendor-info h2 { font-size: 1.3rem; } .info-card { padding: 1.25rem; } .info-card h3 { font-size: 1rem; } .info-card li { font-size: 0.9rem; padding: 0.5rem 0; }
+            input, textarea { padding: 0.75rem 0.9rem; font-size: 16px; } .btn { padding: 0.8rem 1.5rem; font-size: 0.95rem; }
+            footer { padding: 2rem 1rem 1rem; } .footer-logo { font-size: 1.1rem; } .footer-links { gap: 1rem; } .footer-links a { font-size: 0.85rem; }
         }
-        
-        @media (max-width: 380px) {
-            .page-hero h1 { font-size: 1.4rem; }
-            .form-section { padding: 1.25rem 1rem; }
-        }
+        @media (max-width: 380px) { .page-hero h1 { font-size: 1.4rem; } .form-section { padding: 1.25rem 1rem; } }
     </style>
 </head>
 <body>
@@ -119,151 +83,46 @@
         </ul>
         <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
     </nav>
-    
     <section class="page-hero">
         <h1>🔨 Vendor Registration</h1>
         <p>Showcase your work to homeowners and connect with potential clients at our outdoor home show!</p>
     </section>
-    
     <main class="main-content">
         <aside class="vendor-info">
             <h2>Vendor Information</h2>
-            <div class="info-card">
-                <h3>📍 Your Setup</h3>
-                <ul>
-                    <li>Park your work vehicle in your designated spot</li>
-                    <li>Set up your table directly behind your vehicle</li>
-                    <li>Use any tools or work-related items as props</li>
-                    <li>Your display doesn't need to be elaborate</li>
-                    <li>Keep your area professional and presentable</li>
-                </ul>
-            </div>
-            <div class="info-card">
-                <h3>🎯 What to Expect</h3>
-                <ul>
-                    <li>Face-to-face time with homeowners</li>
-                    <li>Family-friendly atmosphere with entertainment</li>
-                    <li>Live music and food trucks all day</li>
-                    <li>Network with other local professionals</li>
-                    <li>Support Space Camp for kids!</li>
-                </ul>
-            </div>
-            <div class="info-card">
-                <h3>📅 Event Details</h3>
-                <ul>
-                    <li><strong>Date:</strong> Saturday, April 18, 2026</li>
-                    <li><strong>Location:</strong> TBA (outdoor venue)</li>
-                    <li><strong>Weather:</strong> Outdoor event, weather permitting</li>
-                </ul>
-            </div>
+            <div class="info-card"><h3>📍 Your Setup</h3><ul><li>Park your work vehicle in your designated spot</li><li>Set up your table directly behind your vehicle</li><li>Use any tools or work-related items as props</li><li>Your display doesn't need to be elaborate</li><li>Keep your area professional and presentable</li></ul></div>
+            <div class="info-card"><h3>🎯 What to Expect</h3><ul><li>Face-to-face time with homeowners</li><li>Family-friendly atmosphere with entertainment</li><li>Live music and food trucks all day</li><li>Network with other local professionals</li><li>Support Space Camp for kids!</li></ul></div>
+            <div class="info-card"><h3>📅 Event Details</h3><ul><li><strong>Date:</strong> Saturday, April 18, 2026</li><li><strong>Location:</strong> TBA (outdoor venue)</li><li><strong>Weather:</strong> Outdoor event, weather permitting</li></ul></div>
         </aside>
-        
         <div class="form-section">
             <h2>Register Your Business</h2>
             <p>Complete the form below to secure your vendor spot</p>
             <div id="formStatus" class="form-status"></div>
             <form id="vendorForm">
                 <div class="form-row">
-                    <div class="form-group">
-                        <label for="firstName">First Name <span class="required">*</span></label>
-                        <input type="text" id="firstName" name="firstName" required>
-                        <div class="error-message">Please enter your first name</div>
-                    </div>
-                    <div class="form-group">
-                        <label for="lastName">Last Name <span class="required">*</span></label>
-                        <input type="text" id="lastName" name="lastName" required>
-                        <div class="error-message">Please enter your last name</div>
-                    </div>
+                    <div class="form-group"><label for="firstName">First Name <span class="required">*</span></label><input type="text" id="firstName" name="firstName" required><div class="error-message">Please enter your first name</div></div>
+                    <div class="form-group"><label for="lastName">Last Name <span class="required">*</span></label><input type="text" id="lastName" name="lastName" required><div class="error-message">Please enter your last name</div></div>
                 </div>
-                <div class="form-group">
-                    <label for="companyName">Company Name <span class="required">*</span></label>
-                    <input type="text" id="companyName" name="companyName" required>
-                    <div class="error-message">Please enter your company name</div>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" required>
-                    <div class="error-message">Please enter a valid email address</div>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number <span class="required">*</span></label>
-                    <input type="tel" id="phone" name="phone" required placeholder="(256) 555-1234">
-                    <div class="error-message">Please enter your phone number</div>
-                </div>
-                <div class="form-group">
-                    <label for="services">Services/Trade (Optional)</label>
-                    <textarea id="services" name="services" placeholder="Briefly describe your services (e.g., HVAC, Roofing, Plumbing, etc.)"></textarea>
-                </div>
+                <div class="form-group"><label for="companyName">Company Name <span class="required">*</span></label><input type="text" id="companyName" name="companyName" required><div class="error-message">Please enter your company name</div></div>
+                <div class="form-group"><label for="email">Email Address <span class="required">*</span></label><input type="email" id="email" name="email" required><div class="error-message">Please enter a valid email address</div></div>
+                <div class="form-group"><label for="phone">Phone Number <span class="required">*</span></label><input type="tel" id="phone" name="phone" required placeholder="(256) 555-1234"><div class="error-message">Please enter your phone number</div></div>
+                <div class="form-group"><label for="services">Services/Trade (Optional)</label><textarea id="services" name="services" placeholder="Briefly describe your services (e.g., HVAC, Roofing, Plumbing, etc.)"></textarea></div>
                 <button type="submit" class="btn btn-primary" id="submitBtn"><span>🎪 Register as Vendor</span></button>
             </form>
         </div>
     </main>
-    
     <footer>
         <div class="footer-logo">🎪 MEET THE CONTRACTORS</div>
-        <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="vendor-registration.html">Vendor Registration</a>
-            <a href="coordinator-signup.html">Coordinator Signup</a>
-        </div>
+        <div class="footer-links"><a href="index.html">Home</a><a href="vendor-registration.html">Vendor Registration</a><a href="coordinator-signup.html">Coordinator Signup</a></div>
         <p class="footer-note">© 2026 Meet the Contractors. All proceeds benefit Space Camp through the Pace program.</p>
     </footer>
-    
     <script>
         function toggleMenu() { document.querySelector('.nav-links').classList.toggle('active'); }
-        const form = document.getElementById('vendorForm');
-        const submitBtn = document.getElementById('submitBtn');
-        const formStatus = document.getElementById('formStatus');
-        
-        document.getElementById('phone').addEventListener('input', function(e) {
-            let value = e.target.value.replace(/\D/g, '');
-            if (value.length >= 6) value = '(' + value.substring(0, 3) + ') ' + value.substring(3, 6) + '-' + value.substring(6, 10);
-            else if (value.length >= 3) value = '(' + value.substring(0, 3) + ') ' + value.substring(3);
-            e.target.value = value;
-        });
-        
-        function validateForm() {
-            let isValid = true;
-            form.querySelectorAll('[required]').forEach(field => {
-                if (!field.value.trim()) { field.classList.add('error'); isValid = false; } else { field.classList.remove('error'); }
-            });
-            const email = document.getElementById('email');
-            if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) { email.classList.add('error'); isValid = false; }
-            return isValid;
-        }
-        
+        const form = document.getElementById('vendorForm'); const submitBtn = document.getElementById('submitBtn'); const formStatus = document.getElementById('formStatus');
+        document.getElementById('phone').addEventListener('input', function(e) { let value = e.target.value.replace(/\D/g, ''); if (value.length >= 6) value = '(' + value.substring(0, 3) + ') ' + value.substring(3, 6) + '-' + value.substring(6, 10); else if (value.length >= 3) value = '(' + value.substring(0, 3) + ') ' + value.substring(3); e.target.value = value; });
+        function validateForm() { let isValid = true; form.querySelectorAll('[required]').forEach(field => { if (!field.value.trim()) { field.classList.add('error'); isValid = false; } else { field.classList.remove('error'); } }); const email = document.getElementById('email'); if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) { email.classList.add('error'); isValid = false; } return isValid; }
         form.querySelectorAll('input, textarea').forEach(field => { field.addEventListener('input', () => { field.classList.remove('error'); }); });
-        
-        form.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            if (!validateForm()) return;
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<span>Submitting...</span>';
-            try {
-                await fetch('https://email-bot-server.micaiah-tasks.workers.dev/api/subscribe', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        listId: 'meet-the-contractors-vendors',
-                        email: document.getElementById('email').value.trim(),
-                        fields: { 
-                            first_name: document.getElementById('firstName').value.trim(), 
-                            last_name: document.getElementById('lastName').value.trim(), 
-                            company_name: document.getElementById('companyName').value.trim(), 
-                            phone: document.getElementById('phone').value.trim(), 
-                            services: document.getElementById('services').value.trim(), 
-                            registration_type: 'vendor' 
-                        }
-                    })
-                });
-            } catch (error) {}
-            formStatus.className = 'form-status success';
-            formStatus.innerHTML = '<h3>🎉 Registration Received!</h3><p>Thank you for registering! We\'ll be in touch with more details.</p>';
-            form.reset();
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = '<span>🎪 Register as Vendor</span>';
-            formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        });
+        form.addEventListener('submit', async function(e) { e.preventDefault(); if (!validateForm()) return; submitBtn.disabled = true; submitBtn.innerHTML = '<span>Submitting...</span>'; try { await fetch('https://email-bot-server.micaiah-tasks.workers.dev/api/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ listId: 'meet-the-contractors-vendors', email: document.getElementById('email').value.trim(), fields: { first_name: document.getElementById('firstName').value.trim(), last_name: document.getElementById('lastName').value.trim(), company_name: document.getElementById('companyName').value.trim(), phone: document.getElementById('phone').value.trim(), services: document.getElementById('services').value.trim(), registration_type: 'vendor' } }) }); } catch (error) {} formStatus.className = 'form-status success'; formStatus.innerHTML = '<h3>🎉 Registration Received!</h3><p>Thank you for registering! We\'ll be in touch with more details.</p>'; form.reset(); submitBtn.disabled = false; submitBtn.innerHTML = '<span>🎪 Register as Vendor</span>'; formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' }); });
     </script>
 </body>
 </html>
