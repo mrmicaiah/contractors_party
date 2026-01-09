@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contractors Party | Outdoor Home Show - April 18, 2026</title>
     <meta name="description" content="Join us for an outdoor Meet the Contractors home show on April 18, 2026. Live music, food trucks, family fun, and connect with local home improvement professionals. All proceeds benefit Space Camp for kids.">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -256,12 +257,7 @@
         .calendar-dropdown a:hover { background: var(--cream); }
         .calendar-dropdown a span.icon { font-size: 1.2rem; }
         
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+        .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
         
         .btn {
             display: inline-flex;
@@ -283,10 +279,7 @@
             box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
         }
         
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.5);
-        }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(255, 107, 53, 0.5); }
         
         .btn-secondary {
             background: var(--white);
@@ -294,11 +287,7 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         
-        .btn-secondary:hover {
-            transform: translateY(-3px);
-            background: var(--grass-green);
-            color: var(--white);
-        }
+        .btn-secondary:hover { transform: translateY(-3px); background: var(--grass-green); color: var(--white); }
         
         .weather-notice {
             background: linear-gradient(90deg, var(--sky-blue), #6BB3E0);
@@ -313,14 +302,18 @@
         .info-section { padding: 6rem 2rem; background: var(--cream); }
         .container { max-width: 1200px; margin: 0 auto; }
         .section-header { text-align: center; margin-bottom: 4rem; }
+        
         .section-header h2 {
             font-family: 'Dela Gothic One', cursive;
             font-size: clamp(2rem, 5vw, 3rem);
             color: var(--grass-green);
             margin-bottom: 1rem;
         }
+        
         .section-header p { font-size: 1.2rem; color: var(--charcoal); opacity: 0.8; max-width: 600px; margin: 0 auto; }
+        
         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        
         .feature-card {
             background: var(--white);
             border-radius: 24px;
@@ -330,22 +323,28 @@
             transition: transform 0.3s, box-shadow 0.3s;
             border: 3px solid transparent;
         }
+        
         .feature-card:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0,0,0,0.1); border-color: var(--golden-yellow); }
         .feature-icon { font-size: 4rem; margin-bottom: 1.5rem; display: block; }
         .feature-card h3 { font-family: 'Dela Gothic One', cursive; font-size: 1.4rem; color: var(--grass-green); margin-bottom: 1rem; }
         .feature-card p { color: var(--charcoal); opacity: 0.8; line-height: 1.7; }
+        
         .cause-section { padding: 6rem 2rem; background: linear-gradient(135deg, var(--grass-green) 0%, #3d7a36 100%); position: relative; overflow: hidden; }
         .cause-content { max-width: 800px; margin: 0 auto; text-align: center; color: var(--white); position: relative; z-index: 10; }
         .cause-content h2 { font-family: 'Dela Gothic One', cursive; font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1.5rem; }
         .cause-content p { font-size: 1.3rem; line-height: 1.8; margin-bottom: 2rem; opacity: 0.95; }
+        
         .admission-badge { display: inline-block; background: var(--golden-yellow); color: var(--charcoal); padding: 1.5rem 3rem; border-radius: 20px; font-size: 1.5rem; font-weight: 700; }
         .admission-badge span { display: block; font-size: 0.9rem; font-weight: 500; margin-top: 0.5rem; opacity: 0.8; }
+        
         .cta-section { padding: 6rem 2rem; background: var(--cream); }
         .cta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto; }
+        
         .cta-card { background: var(--white); border-radius: 24px; padding: 3rem; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border-top: 6px solid var(--sunset-orange); }
         .cta-card:nth-child(2) { border-top-color: var(--sky-blue); }
         .cta-card h3 { font-family: 'Dela Gothic One', cursive; font-size: 1.8rem; color: var(--grass-green); margin-bottom: 1rem; }
         .cta-card p { color: var(--charcoal); opacity: 0.8; margin-bottom: 2rem; line-height: 1.7; }
+        
         footer { background: var(--charcoal); color: var(--white); padding: 4rem 2rem 2rem; text-align: center; }
         .footer-logo { font-family: 'Dela Gothic One', cursive; font-size: 2rem; color: var(--golden-yellow); margin-bottom: 1rem; }
         .footer-tagline { opacity: 0.7; margin-bottom: 2rem; }
@@ -353,6 +352,7 @@
         .footer-links a { color: var(--white); text-decoration: none; opacity: 0.8; transition: opacity 0.3s; }
         .footer-links a:hover { opacity: 1; color: var(--golden-yellow); }
         .footer-note { font-size: 0.9rem; opacity: 0.5; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
+        
         @media (max-width: 768px) {
             .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--cream); flex-direction: column; padding: 2rem; gap: 1rem; border-bottom: 3px solid var(--sunset-orange); }
             .nav-links.active { display: flex; }
@@ -384,6 +384,7 @@
             <div class="event-badge">🎉 A Unique Home Show Experience</div>
             <h1>CONTRACTORS PARTY</h1>
             <h2>Outdoor Home Show & Meet the Contractors</h2>
+            
             <div class="event-date-wrapper">
                 <div class="event-date" onclick="toggleCalendarDropdown(event)">
                     <span class="date-icon">📅</span>
@@ -400,6 +401,7 @@
                     <a href="#" onclick="downloadICS(event)"><span class="icon">📥</span> Download .ics</a>
                 </div>
             </div>
+            
             <div class="hero-buttons">
                 <a href="vendor-registration.html" class="btn btn-primary">🔨 Register as Vendor</a>
                 <a href="coordinator-signup.html" class="btn btn-secondary">📋 Become a Coordinator</a>
@@ -444,16 +446,8 @@
                 <p>Whether you're a contractor looking to showcase your work or want to help coordinate this amazing event, we'd love to have you!</p>
             </div>
             <div class="cta-grid">
-                <div class="cta-card">
-                    <h3>🔨 Vendors & Contractors</h3>
-                    <p>Park your work vehicle, set up your table, and showcase your skills to homeowners looking for quality contractors. Bring your tools as props!</p>
-                    <a href="vendor-registration.html" class="btn btn-primary">Register as Vendor</a>
-                </div>
-                <div class="cta-card">
-                    <h3>📋 Event Coordinators</h3>
-                    <p>Help us make this event amazing! We're looking for volunteers to help with setup, coordination, and ensuring everything runs smoothly.</p>
-                    <a href="coordinator-signup.html" class="btn btn-primary" style="background: var(--sky-blue);">Become a Coordinator</a>
-                </div>
+                <div class="cta-card"><h3>🔨 Vendors & Contractors</h3><p>Park your work vehicle, set up your table, and showcase your skills to homeowners looking for quality contractors. Bring your tools as props!</p><a href="vendor-registration.html" class="btn btn-primary">Register as Vendor</a></div>
+                <div class="cta-card"><h3>📋 Event Coordinators</h3><p>Help us make this event amazing! We're looking for volunteers to help with setup, coordination, and ensuring everything runs smoothly.</p><a href="coordinator-signup.html" class="btn btn-primary" style="background: var(--sky-blue);">Become a Coordinator</a></div>
             </div>
         </div>
     </section>
@@ -478,50 +472,13 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
-        const eventDetails = {
-            title: 'Contractors Party - Outdoor Home Show',
-            description: 'Join us for an outdoor Meet the Contractors home show! Live music, food trucks, face painting, and connect with local home improvement professionals. All proceeds benefit Space Camp for kids through the Pace program. Admission: $250',
-            location: 'TBA - North Alabama',
-            startDate: '2026-04-18',
-            startTime: '09:00:00',
-            endDate: '2026-04-18',
-            endTime: '17:00:00'
-        };
-        function toggleCalendarDropdown(e) {
-            e.stopPropagation();
-            document.getElementById('calendarDropdown').classList.toggle('active');
-        }
-        document.addEventListener('click', function(e) {
-            const dropdown = document.getElementById('calendarDropdown');
-            const dateWrapper = document.querySelector('.event-date-wrapper');
-            if (!dateWrapper.contains(e.target)) dropdown.classList.remove('active');
-        });
-        function addToGoogleCalendar(e) {
-            e.preventDefault();
-            const startDateTime = eventDetails.startDate.replace(/-/g, '') + 'T' + eventDetails.startTime.replace(/:/g, '');
-            const endDateTime = eventDetails.endDate.replace(/-/g, '') + 'T' + eventDetails.endTime.replace(/:/g, '');
-            window.open(`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventDetails.title)}&dates=${startDateTime}/${endDateTime}&details=${encodeURIComponent(eventDetails.description)}&location=${encodeURIComponent(eventDetails.location)}`, '_blank');
-            document.getElementById('calendarDropdown').classList.remove('active');
-        }
+        const eventDetails = { title: 'Contractors Party - Outdoor Home Show', description: 'Join us for an outdoor Meet the Contractors home show! Live music, food trucks, face painting, and connect with local home improvement professionals. All proceeds benefit Space Camp for kids through the Pace program. Admission: $250', location: 'TBA - North Alabama', startDate: '2026-04-18', startTime: '09:00:00', endDate: '2026-04-18', endTime: '17:00:00' };
+        function toggleCalendarDropdown(e) { e.stopPropagation(); document.getElementById('calendarDropdown').classList.toggle('active'); }
+        document.addEventListener('click', function(e) { const dropdown = document.getElementById('calendarDropdown'); const dateWrapper = document.querySelector('.event-date-wrapper'); if (!dateWrapper.contains(e.target)) dropdown.classList.remove('active'); });
+        function addToGoogleCalendar(e) { e.preventDefault(); const startDateTime = eventDetails.startDate.replace(/-/g, '') + 'T' + eventDetails.startTime.replace(/:/g, ''); const endDateTime = eventDetails.endDate.replace(/-/g, '') + 'T' + eventDetails.endTime.replace(/:/g, ''); window.open(`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventDetails.title)}&dates=${startDateTime}/${endDateTime}&details=${encodeURIComponent(eventDetails.description)}&location=${encodeURIComponent(eventDetails.location)}`, '_blank'); document.getElementById('calendarDropdown').classList.remove('active'); }
         function addToAppleCalendar(e) { e.preventDefault(); downloadICS(e); }
-        function addToOutlookCalendar(e) {
-            e.preventDefault();
-            window.open(`https://outlook.live.com/calendar/0/deeplink/compose?subject=${encodeURIComponent(eventDetails.title)}&startdt=${eventDetails.startDate}T${eventDetails.startTime}&enddt=${eventDetails.endDate}T${eventDetails.endTime}&body=${encodeURIComponent(eventDetails.description)}&location=${encodeURIComponent(eventDetails.location)}`, '_blank');
-            document.getElementById('calendarDropdown').classList.remove('active');
-        }
-        function downloadICS(e) {
-            e.preventDefault();
-            const formatDate = (date, time) => date.replace(/-/g, '') + 'T' + time.replace(/:/g, '');
-            const icsContent = `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Contractors Party//Event//EN\nBEGIN:VEVENT\nDTSTART:${formatDate(eventDetails.startDate, eventDetails.startTime)}\nDTEND:${formatDate(eventDetails.endDate, eventDetails.endTime)}\nSUMMARY:${eventDetails.title}\nDESCRIPTION:${eventDetails.description.replace(/\n/g, '\\n')}\nLOCATION:${eventDetails.location}\nEND:VEVENT\nEND:VCALENDAR`;
-            const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = 'contractors-party-2026.ics';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            document.getElementById('calendarDropdown').classList.remove('active');
-        }
+        function addToOutlookCalendar(e) { e.preventDefault(); const startDateTime = eventDetails.startDate + 'T' + eventDetails.startTime; const endDateTime = eventDetails.endDate + 'T' + eventDetails.endTime; window.open(`https://outlook.live.com/calendar/0/deeplink/compose?subject=${encodeURIComponent(eventDetails.title)}&startdt=${startDateTime}&enddt=${endDateTime}&body=${encodeURIComponent(eventDetails.description)}&location=${encodeURIComponent(eventDetails.location)}`, '_blank'); document.getElementById('calendarDropdown').classList.remove('active'); }
+        function downloadICS(e) { e.preventDefault(); const formatDate = (date, time) => date.replace(/-/g, '') + 'T' + time.replace(/:/g, ''); const icsContent = `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Contractors Party//Event//EN\nBEGIN:VEVENT\nDTSTART:${formatDate(eventDetails.startDate, eventDetails.startTime)}\nDTEND:${formatDate(eventDetails.endDate, eventDetails.endTime)}\nSUMMARY:${eventDetails.title}\nDESCRIPTION:${eventDetails.description.replace(/\n/g, '\\n')}\nLOCATION:${eventDetails.location}\nEND:VEVENT\nEND:VCALENDAR`; const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' }); const link = document.createElement('a'); link.href = URL.createObjectURL(blob); link.download = 'contractors-party-2026.ics'; document.body.appendChild(link); link.click(); document.body.removeChild(link); document.getElementById('calendarDropdown').classList.remove('active'); }
     </script>
 </body>
 </html>
