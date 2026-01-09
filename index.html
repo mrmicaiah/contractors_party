@@ -163,6 +163,12 @@
             margin-bottom: 2rem;
         }
         
+        .event-date-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        
         .event-date {
             display: inline-flex;
             align-items: center;
@@ -171,7 +177,15 @@
             padding: 1rem 2rem;
             border-radius: 20px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 3px solid transparent;
+        }
+        
+        .event-date:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+            border-color: var(--golden-yellow);
         }
         
         .event-date .date-icon { font-size: 2.5rem; }
@@ -180,6 +194,68 @@
             display: block;
             font-size: 1.5rem;
             color: var(--sunset-orange);
+        }
+        
+        .add-to-calendar-text {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--sky-blue);
+            font-weight: 600;
+            margin-top: 0.25rem;
+        }
+        
+        /* Calendar Dropdown */
+        .calendar-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+            padding: 1rem;
+            min-width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+            z-index: 100;
+        }
+        
+        .calendar-dropdown.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(5px);
+        }
+        
+        .calendar-dropdown::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid var(--white);
+        }
+        
+        .calendar-dropdown a {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 500;
+            border-radius: 10px;
+            transition: background 0.2s;
+        }
+        
+        .calendar-dropdown a:hover {
+            background: var(--cream);
+        }
+        
+        .calendar-dropdown a span.icon {
+            font-size: 1.2rem;
         }
         
         .hero-buttons {
@@ -459,11 +535,28 @@
             <h1>CONTRACTORS PARTY</h1>
             <h2>Outdoor Home Show & Meet the Contractors</h2>
             
-            <div class="event-date">
-                <span class="date-icon">📅</span>
-                <div class="date-text">
-                    <strong>April 18, 2026</strong>
-                    <span>Saturday • All Day Event</span>
+            <div class="event-date-wrapper">
+                <div class="event-date" onclick="toggleCalendarDropdown(event)">
+                    <span class="date-icon">📅</span>
+                    <div class="date-text">
+                        <strong>April 18, 2026</strong>
+                        <span>Saturday • All Day Event</span>
+                        <span class="add-to-calendar-text">+ Add to Calendar</span>
+                    </div>
+                </div>
+                <div class="calendar-dropdown" id="calendarDropdown">
+                    <a href="#" onclick="addToGoogleCalendar(event)">
+                        <span class="icon">📆</span> Google Calendar
+                    </a>
+                    <a href="#" onclick="addToAppleCalendar(event)">
+                        <span class="icon">🍎</span> Apple Calendar
+                    </a>
+                    <a href="#" onclick="addToOutlookCalendar(event)">
+                        <span class="icon">📧</span> Outlook Calendar
+                    </a>
+                    <a href="#" onclick="downloadICS(event)">
+                        <span class="icon">📥</span> Download .ics
+                    </a>
                 </div>
             </div>
             
@@ -572,6 +665,89 @@
                 }
             });
         });
+        
+        // Calendar functionality
+        const eventDetails = {
+            title: 'Contractors Party - Outdoor Home Show',
+            description: 'Join us for an outdoor Meet the Contractors home show! Live music, food trucks, face painting, and connect with local home improvement professionals. All proceeds benefit Space Camp for kids through the Pace program. Admission: $250',
+            location: 'TBA - North Alabama',
+            startDate: '2026-04-18',
+            startTime: '09:00:00',
+            endDate: '2026-04-18',
+            endTime: '17:00:00'
+        };
+        
+        function toggleCalendarDropdown(e) {
+            e.stopPropagation();
+            const dropdown = document.getElementById('calendarDropdown');
+            dropdown.classList.toggle('active');
+        }
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            const dropdown = document.getElementById('calendarDropdown');
+            const dateWrapper = document.querySelector('.event-date-wrapper');
+            if (!dateWrapper.contains(e.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
+        
+        function addToGoogleCalendar(e) {
+            e.preventDefault();
+            const startDateTime = eventDetails.startDate.replace(/-/g, '') + 'T' + eventDetails.startTime.replace(/:/g, '');
+            const endDateTime = eventDetails.endDate.replace(/-/g, '') + 'T' + eventDetails.endTime.replace(/:/g, '');
+            
+            const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventDetails.title)}&dates=${startDateTime}/${endDateTime}&details=${encodeURIComponent(eventDetails.description)}&location=${encodeURIComponent(eventDetails.location)}`;
+            
+            window.open(url, '_blank');
+            document.getElementById('calendarDropdown').classList.remove('active');
+        }
+        
+        function addToAppleCalendar(e) {
+            e.preventDefault();
+            downloadICS(e);
+        }
+        
+        function addToOutlookCalendar(e) {
+            e.preventDefault();
+            const startDateTime = eventDetails.startDate + 'T' + eventDetails.startTime;
+            const endDateTime = eventDetails.endDate + 'T' + eventDetails.endTime;
+            
+            const url = `https://outlook.live.com/calendar/0/deeplink/compose?subject=${encodeURIComponent(eventDetails.title)}&startdt=${startDateTime}&enddt=${endDateTime}&body=${encodeURIComponent(eventDetails.description)}&location=${encodeURIComponent(eventDetails.location)}`;
+            
+            window.open(url, '_blank');
+            document.getElementById('calendarDropdown').classList.remove('active');
+        }
+        
+        function downloadICS(e) {
+            e.preventDefault();
+            
+            const formatDate = (date, time) => {
+                return date.replace(/-/g, '') + 'T' + time.replace(/:/g, '');
+            };
+            
+            const icsContent = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Contractors Party//Event//EN
+BEGIN:VEVENT
+DTSTART:${formatDate(eventDetails.startDate, eventDetails.startTime)}
+DTEND:${formatDate(eventDetails.endDate, eventDetails.endTime)}
+SUMMARY:${eventDetails.title}
+DESCRIPTION:${eventDetails.description.replace(/\n/g, '\\n')}
+LOCATION:${eventDetails.location}
+END:VEVENT
+END:VCALENDAR`;
+            
+            const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'contractors-party-2026.ics';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            document.getElementById('calendarDropdown').classList.remove('active');
+        }
     </script>
 </body>
 </html>
