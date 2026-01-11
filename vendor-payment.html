@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Payment | Meet the Contractors</title>
+    <meta name="description" content="Complete your vendor registration payment for Meet the Contractors.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --sunset-orange: #FF6B35; --golden-yellow: #F7C948; --grass-green: #2D5A27; --sky-blue: #4A90D9; --cream: #FFF8E7; --charcoal: #2C2C2C; --white: #FFFFFF; --success: #28A745; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--charcoal); min-height: 100vh; display: flex; flex-direction: column; }
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0.75rem 1.5rem; display: flex; justify-content: space-between; align-items: center; background: rgba(255, 248, 231, 0.95); backdrop-filter: blur(10px); border-bottom: 3px solid var(--sunset-orange); }
+        .nav-brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+        .grid-logo { height: 45px; width: auto; }
+        .logo-text { display: flex; flex-direction: column; }
+        .logo { font-family: 'Dela Gothic One', cursive; font-size: 1rem; color: var(--sunset-orange); text-decoration: none; line-height: 1.1; }
+        .logo span { color: var(--grass-green); }
+        .logo-subtitle { font-size: 0.6rem; color: var(--charcoal); opacity: 0.7; line-height: 1.2; }
+        .esp-badge { display: inline-block; background: var(--grass-green); color: var(--white); font-size: 0.5rem; padding: 0.15rem 0.35rem; border-radius: 3px; font-weight: 700; margin-left: 0.25rem; vertical-align: middle; }
+        .payment-container { flex: 1; display: flex; align-items: center; justify-content: center; padding: 6rem 1.5rem 3rem; }
+        .payment-card { background: var(--white); border-radius: 24px; padding: 2.5rem; max-width: 500px; width: 100%; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.1); border-top: 6px solid var(--success); }
+        .success-icon { font-size: 4rem; margin-bottom: 1rem; }
+        .payment-card h1 { font-family: 'Dela Gothic One', cursive; font-size: 1.8rem; color: var(--grass-green); margin-bottom: 0.5rem; }
+        .payment-card .subtitle { color: var(--charcoal); opacity: 0.7; margin-bottom: 2rem; font-size: 1rem; }
+        .payment-box { background: linear-gradient(135deg, #008CFF 0%, #0070CC 100%); border-radius: 16px; padding: 2rem; margin-bottom: 1.5rem; color: var(--white); }
+        .payment-box h2 { font-family: 'Dela Gothic One', cursive; font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .payment-amount { font-size: 3rem; font-weight: 700; margin: 0.5rem 0; }
+        .payment-box p { opacity: 0.9; font-size: 0.9rem; }
+        .venmo-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.75rem; background: var(--white); color: #008CFF; padding: 1rem 2.5rem; border-radius: 50px; font-size: 1.2rem; font-weight: 700; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.2); margin-top: 1rem; }
+        .venmo-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
+        .venmo-btn svg { width: 28px; height: 28px; }
+        .instructions { background: rgba(247, 201, 72, 0.15); border: 2px solid var(--golden-yellow); border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem; text-align: left; }
+        .instructions h3 { font-family: 'Dela Gothic One', cursive; font-size: 1rem; color: var(--sunset-orange); margin-bottom: 0.75rem; }
+        .instructions ol { padding-left: 1.25rem; }
+        .instructions li { margin-bottom: 0.5rem; font-size: 0.95rem; line-height: 1.5; }
+        .back-link { display: inline-block; margin-top: 1rem; color: var(--charcoal); opacity: 0.7; text-decoration: none; font-size: 0.9rem; }
+        .back-link:hover { opacity: 1; color: var(--sunset-orange); }
+        footer { background: var(--charcoal); color: var(--white); padding: 2rem 1.5rem 1rem; text-align: center; }
+        .footer-logo { font-family: 'Dela Gothic One', cursive; font-size: 1.25rem; color: var(--golden-yellow); margin-bottom: 0.25rem; }
+        .footer-subtitle { font-size: 0.7rem; opacity: 0.6; margin-bottom: 0.75rem; }
+        .footer-note { font-size: 0.8rem; opacity: 0.5; }
+        @media (max-width: 768px) {
+            nav { padding: 0.6rem 1rem; }
+            .grid-logo { height: 35px; }
+            .logo { font-size: 0.85rem; }
+            .logo-subtitle { font-size: 0.5rem; }
+            .payment-container { padding: 5rem 1rem 2rem; }
+            .payment-card { padding: 1.75rem 1.25rem; }
+            .payment-card h1 { font-size: 1.5rem; }
+            .payment-amount { font-size: 2.5rem; }
+            .venmo-btn { padding: 0.9rem 2rem; font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="nav-brand">
+            <img src="grid-logo.webp" alt="The Grid Logo" class="grid-logo">
+            <div class="logo-text">
+                <div class="logo">MEET THE<span> CONTRACTORS</span><span class="esp-badge">ESP</span></div>
+                <div class="logo-subtitle">& Space Camp Scholarship Fundraiser</div>
+            </div>
+        </a>
+    </nav>
+    
+    <main class="payment-container">
+        <div class="payment-card">
+            <div class="success-icon">✅</div>
+            <h1>Registration Received!</h1>
+            <p class="subtitle">Complete your payment below to secure your vendor spot</p>
+            
+            <div class="payment-box">
+                <h2>Vendor Registration Fee</h2>
+                <div class="payment-amount">$250</div>
+                <p>Pay via Venmo to complete registration</p>
+                <a href="https://venmo.com/DunfordR21?txn=pay&amount=250&note=MTC-Vendor-Registration" target="_blank" class="venmo-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.5 2c.998 1.676 1.5 3.395 1.5 5.114c0 5.006-4.257 11.483-7.714 16.286H5.286L2 3.286l7.371-.643l1.286 10.071c1.285-2.228 2.828-5.828 2.828-8.228c0-1.629-.457-2.743-1.029-3.657L19.5 2z"/></svg>
+                    Pay with Venmo
+                </a>
+            </div>
+            
+            <div class="instructions">
+                <h3>📱 How to Pay</h3>
+                <ol>
+                    <li>Click the "Pay with Venmo" button above</li>
+                    <li>Log in to your Venmo account</li>
+                    <li>The amount ($250) and note will be pre-filled</li>
+                    <li>Review and confirm your payment</li>
+                </ol>
+            </div>
+            
+            <p style="font-size: 0.9rem; opacity: 0.7;">Questions? Contact us and we'll help you out!</p>
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-logo">🎪 MEET THE CONTRACTORS</div>
+        <div class="footer-subtitle">& Space Camp Scholarship Fundraiser</div>
+        <p class="footer-note">© 2026 Meet the Contractors. All proceeds benefit Space Camp through the Pace program.</p>
+    </footer>
+</body>
+</html>

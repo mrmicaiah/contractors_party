@@ -36,9 +36,16 @@
         .info-card li { padding: 0.6rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; align-items: flex-start; gap: 0.6rem; line-height: 1.5; font-size: 0.95rem; }
         .info-card li:last-child { border-bottom: none; }
         .info-card li::before { content: '✓'; color: var(--grass-green); font-weight: bold; flex-shrink: 0; }
+        .info-card.fee-card { border-left-color: var(--grass-green); background: linear-gradient(135deg, rgba(45, 90, 39, 0.05) 0%, rgba(247, 201, 72, 0.1) 100%); }
+        .info-card.fee-card h3 { color: var(--grass-green); }
+        .fee-amount { font-family: 'Dela Gothic One', cursive; font-size: 2.5rem; color: var(--grass-green); margin: 0.5rem 0; }
+        .fee-note { font-size: 0.9rem; color: var(--charcoal); opacity: 0.8; line-height: 1.5; }
         .form-section { background: var(--white); border-radius: 20px; padding: 2rem 1.5rem; box-shadow: 0 12px 40px rgba(0,0,0,0.08); border-top: 5px solid var(--sunset-orange); }
         .form-section h2 { font-family: 'Dela Gothic One', cursive; font-size: 1.5rem; color: var(--grass-green); margin-bottom: 0.4rem; text-align: center; }
         .form-section > p { text-align: center; color: var(--charcoal); opacity: 0.7; margin-bottom: 1.5rem; font-size: 0.95rem; }
+        .fee-banner { background: linear-gradient(135deg, var(--grass-green) 0%, #3d7a35 100%); color: var(--white); padding: 1rem 1.25rem; border-radius: 12px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+        .fee-banner-text { font-weight: 600; font-size: 0.95rem; }
+        .fee-banner-amount { font-family: 'Dela Gothic One', cursive; font-size: 1.5rem; }
         .form-group { margin-bottom: 1.25rem; }
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
         label { display: block; font-weight: 600; margin-bottom: 0.4rem; font-size: 0.95rem; }
@@ -53,9 +60,8 @@
         .btn-primary { background: var(--sunset-orange); color: var(--white); box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4); }
         .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(255, 107, 53, 0.5); }
         .btn-primary:disabled { background: #ccc; cursor: not-allowed; transform: none; box-shadow: none; }
-        .form-status { padding: 1.25rem; border-radius: 12px; margin-bottom: 1.5rem; display: none; }
-        .form-status.success { display: block; background: rgba(40, 167, 69, 0.1); border: 2px solid var(--success); color: var(--success); text-align: center; }
-        .form-status h3 { font-family: 'Dela Gothic One', cursive; margin-bottom: 0.4rem; font-size: 1.1rem; }
+        .payment-note { text-align: center; font-size: 0.85rem; color: var(--charcoal); opacity: 0.7; margin-top: 1rem; }
+        .payment-note strong { color: var(--grass-green); }
         footer { background: var(--charcoal); color: var(--white); padding: 2.5rem 1.5rem 1.5rem; text-align: center; }
         .footer-logo { font-family: 'Dela Gothic One', cursive; font-size: 1.25rem; color: var(--golden-yellow); margin-bottom: 0.25rem; }
         .footer-subtitle { font-size: 0.7rem; opacity: 0.6; margin-bottom: 0.75rem; }
@@ -75,7 +81,9 @@
             .page-hero { padding: 5rem 1rem 2.5rem; } .page-hero h1 { font-size: 1.6rem; } .page-hero p { font-size: 0.95rem; }
             .main-content { padding: 2rem 1rem; gap: 1.5rem; }
             .form-row { grid-template-columns: 1fr; } .form-section { padding: 1.5rem 1.25rem; } .form-section h2 { font-size: 1.3rem; }
+            .fee-banner { flex-direction: column; text-align: center; }
             .vendor-info h2 { font-size: 1.3rem; } .info-card { padding: 1.25rem; } .info-card h3 { font-size: 1rem; } .info-card li { font-size: 0.9rem; padding: 0.5rem 0; }
+            .fee-amount { font-size: 2rem; }
             input, textarea { padding: 0.75rem 0.9rem; font-size: 16px; } .btn { padding: 0.8rem 1.5rem; font-size: 0.95rem; }
             footer { padding: 2rem 1rem 1rem; } .footer-logo { font-size: 1.1rem; } .footer-links { gap: 1rem; } .footer-links a { font-size: 0.85rem; }
         }
@@ -106,6 +114,11 @@
     <main class="main-content">
         <aside class="vendor-info">
             <h2>Vendor Information</h2>
+            <div class="info-card fee-card">
+                <h3>💰 Registration Fee</h3>
+                <div class="fee-amount">$250</div>
+                <p class="fee-note">Payment via Venmo after registration. Your spot is secured once payment is received.</p>
+            </div>
             <div class="info-card"><h3>📍 Your Setup</h3><ul><li>Park your work vehicle in your designated spot</li><li>Set up your table directly behind your vehicle</li><li>Use any tools or work-related items as props</li><li>Your display doesn't need to be elaborate</li><li>Keep your area professional and presentable</li></ul></div>
             <div class="info-card"><h3>🎯 What to Expect</h3><ul><li>Face-to-face time with homeowners</li><li>Family-friendly atmosphere with entertainment</li><li>Live music and food trucks all day</li><li>Network with other local professionals</li><li>Support Space Camp for kids!</li></ul></div>
             <div class="info-card"><h3>📅 Event Details</h3><ul><li><strong>Date:</strong> Saturday, April 18, 2026</li><li><strong>Location:</strong> TBA (outdoor venue)</li><li><strong>Weather:</strong> Outdoor event, weather permitting</li></ul></div>
@@ -113,7 +126,10 @@
         <div class="form-section">
             <h2>Register Your Business</h2>
             <p>Complete the form below to secure your vendor spot</p>
-            <div id="formStatus" class="form-status"></div>
+            <div class="fee-banner">
+                <span class="fee-banner-text">📋 Registration Fee:</span>
+                <span class="fee-banner-amount">$250</span>
+            </div>
             <form id="vendorForm">
                 <div class="form-row">
                     <div class="form-group"><label for="firstName">First Name <span class="required">*</span></label><input type="text" id="firstName" name="firstName" required><div class="error-message">Please enter your first name</div></div>
@@ -124,6 +140,7 @@
                 <div class="form-group"><label for="phone">Phone Number <span class="required">*</span></label><input type="tel" id="phone" name="phone" required placeholder="(256) 555-1234"><div class="error-message">Please enter your phone number</div></div>
                 <div class="form-group"><label for="services">Services/Trade (Optional)</label><textarea id="services" name="services" placeholder="Briefly describe your services (e.g., HVAC, Roofing, Plumbing, etc.)"></textarea></div>
                 <button type="submit" class="btn btn-primary" id="submitBtn"><span>🎪 Register as Vendor</span></button>
+                <p class="payment-note">After submitting, you'll be directed to <strong>complete payment via Venmo</strong></p>
             </form>
         </div>
     </main>
@@ -135,11 +152,11 @@
     </footer>
     <script>
         function toggleMenu() { document.querySelector('.nav-links').classList.toggle('active'); }
-        const form = document.getElementById('vendorForm'); const submitBtn = document.getElementById('submitBtn'); const formStatus = document.getElementById('formStatus');
+        const form = document.getElementById('vendorForm'); const submitBtn = document.getElementById('submitBtn');
         document.getElementById('phone').addEventListener('input', function(e) { let value = e.target.value.replace(/\D/g, ''); if (value.length >= 6) value = '(' + value.substring(0, 3) + ') ' + value.substring(3, 6) + '-' + value.substring(6, 10); else if (value.length >= 3) value = '(' + value.substring(0, 3) + ') ' + value.substring(3); e.target.value = value; });
         function validateForm() { let isValid = true; form.querySelectorAll('[required]').forEach(field => { if (!field.value.trim()) { field.classList.add('error'); isValid = false; } else { field.classList.remove('error'); } }); const email = document.getElementById('email'); if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) { email.classList.add('error'); isValid = false; } return isValid; }
         form.querySelectorAll('input, textarea').forEach(field => { field.addEventListener('input', () => { field.classList.remove('error'); }); });
-        form.addEventListener('submit', async function(e) { e.preventDefault(); if (!validateForm()) return; submitBtn.disabled = true; submitBtn.innerHTML = '<span>Submitting...</span>'; try { await fetch('https://email-bot-server.micaiah-tasks.workers.dev/api/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ listId: 'meet-the-contractors-vendors', email: document.getElementById('email').value.trim(), fields: { first_name: document.getElementById('firstName').value.trim(), last_name: document.getElementById('lastName').value.trim(), company_name: document.getElementById('companyName').value.trim(), phone: document.getElementById('phone').value.trim(), services: document.getElementById('services').value.trim(), registration_type: 'vendor' } }) }); } catch (error) {} formStatus.className = 'form-status success'; formStatus.innerHTML = '<h3>🎉 Registration Received!</h3><p>Thank you for registering! We\'ll be in touch with more details.</p>'; form.reset(); submitBtn.disabled = false; submitBtn.innerHTML = '<span>🎪 Register as Vendor</span>'; formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' }); });
+        form.addEventListener('submit', async function(e) { e.preventDefault(); if (!validateForm()) return; submitBtn.disabled = true; submitBtn.innerHTML = '<span>Submitting...</span>'; try { await fetch('https://email-bot-server.micaiah-tasks.workers.dev/api/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ listId: 'meet-the-contractors-vendors', email: document.getElementById('email').value.trim(), fields: { first_name: document.getElementById('firstName').value.trim(), last_name: document.getElementById('lastName').value.trim(), company_name: document.getElementById('companyName').value.trim(), phone: document.getElementById('phone').value.trim(), services: document.getElementById('services').value.trim(), registration_type: 'vendor' } }) }); } catch (error) {} window.location.href = 'vendor-payment.html'; });
     </script>
 </body>
 </html>
