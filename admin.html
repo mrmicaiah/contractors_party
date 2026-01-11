@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --sunset-orange: #FF6B35; --golden-yellow: #F7C948; --grass-green: #2D5A27; --sky-blue: #4A90D9; --cream: #FFF8E7; --charcoal: #2C2C2C; --white: #FFFFFF; }
+        :root { --sunset-orange: #FF6B35; --golden-yellow: #F7C948; --grass-green: #2D5A27; --sky-blue: #4A90D9; --cream: #FFF8E7; --charcoal: #2C2C2C; --white: #FFFFFF; --red: #e74c3c; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--charcoal); min-height: 100vh; }
         
@@ -33,7 +33,7 @@
         header { background: var(--white); border-bottom: 3px solid var(--sunset-orange); padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
         .logo { font-family: 'Dela Gothic One', cursive; font-size: 1.1rem; color: var(--sunset-orange); }
         .logo span { color: var(--grass-green); }
-        .header-actions { display: flex; gap: 0.75rem; align-items: center; }
+        .header-actions { display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; }
         .btn { padding: 0.6rem 1.25rem; border-radius: 50px; font-weight: 600; font-size: 0.9rem; text-decoration: none; cursor: pointer; transition: all 0.2s; border: none; display: inline-flex; align-items: center; gap: 0.4rem; }
         .btn-primary { background: var(--sunset-orange); color: var(--white); }
         .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4); }
@@ -45,10 +45,13 @@
         
         /* Stats */
         .stats-bar { display: flex; gap: 1rem; padding: 1.5rem; flex-wrap: wrap; }
-        .stat-card { background: var(--white); padding: 1.25rem 1.5rem; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); flex: 1; min-width: 150px; }
+        .stat-card { background: var(--white); padding: 1.25rem 1.5rem; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); flex: 1; min-width: 120px; }
         .stat-card.vendors { border-left: 4px solid var(--sunset-orange); }
+        .stat-card.paid { border-left: 4px solid var(--grass-green); }
+        .stat-card.unpaid { border-left: 4px solid var(--red); }
         .stat-card.coordinators { border-left: 4px solid var(--sky-blue); }
         .stat-card h3 { font-size: 2rem; font-family: 'Dela Gothic One', cursive; color: var(--grass-green); }
+        .stat-card.unpaid h3 { color: var(--red); }
         .stat-card p { font-size: 0.85rem; color: var(--charcoal); opacity: 0.7; }
         
         /* Tabs */
@@ -61,18 +64,31 @@
         /* Table Container */
         .table-container { background: var(--white); margin: 0 1.5rem 1.5rem; border-radius: 0 16px 16px 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden; }
         .table-header { padding: 1rem 1.5rem; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .table-controls { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
         .search-box { display: flex; align-items: center; gap: 0.5rem; background: var(--cream); padding: 0.5rem 1rem; border-radius: 50px; }
         .search-box input { border: none; background: transparent; font-size: 0.9rem; font-family: inherit; width: 200px; }
         .search-box input:focus { outline: none; }
+        .filter-select { padding: 0.5rem 1rem; border: 2px solid #eee; border-radius: 50px; font-size: 0.9rem; font-family: inherit; background: var(--white); cursor: pointer; }
+        .filter-select:focus { outline: none; border-color: var(--sky-blue); }
         
         /* Table */
         .table-scroll { overflow-x: auto; }
-        table { width: 100%; border-collapse: collapse; min-width: 600px; }
+        table { width: 100%; border-collapse: collapse; min-width: 700px; }
         th, td { padding: 1rem 1.25rem; text-align: left; border-bottom: 1px solid #eee; }
         th { background: var(--cream); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--charcoal); opacity: 0.7; white-space: nowrap; }
         td { font-size: 0.95rem; }
         tr:hover td { background: rgba(247, 201, 72, 0.1); }
         .no-data { text-align: center; padding: 3rem; color: var(--charcoal); opacity: 0.5; }
+        
+        /* Paid Toggle */
+        .paid-toggle { display: flex; align-items: center; gap: 0.5rem; }
+        .toggle-switch { position: relative; width: 50px; height: 26px; background: #ddd; border-radius: 50px; cursor: pointer; transition: background 0.3s; }
+        .toggle-switch.paid { background: var(--grass-green); }
+        .toggle-switch::after { content: ''; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; background: var(--white); border-radius: 50%; transition: transform 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .toggle-switch.paid::after { transform: translateX(24px); }
+        .paid-label { font-size: 0.8rem; font-weight: 600; }
+        .paid-label.yes { color: var(--grass-green); }
+        .paid-label.no { color: var(--red); }
         
         /* Loading */
         .loading { display: flex; align-items: center; justify-content: center; padding: 3rem; }
@@ -91,13 +107,19 @@
         .modal-error { color: #e74c3c; font-size: 0.85rem; margin-bottom: 0.5rem; display: none; }
         .modal-success { color: var(--grass-green); font-size: 0.85rem; margin-bottom: 0.5rem; display: none; }
         
+        /* Toast */
+        .toast { position: fixed; bottom: 2rem; right: 2rem; background: var(--charcoal); color: var(--white); padding: 1rem 1.5rem; border-radius: 12px; font-weight: 500; opacity: 0; transform: translateY(20px); transition: all 0.3s; z-index: 1001; }
+        .toast.show { opacity: 1; transform: translateY(0); }
+        .toast.success { background: var(--grass-green); }
+        .toast.error { background: var(--red); }
+        
         /* Responsive */
         @media (max-width: 768px) {
             header { padding: 1rem; }
             .logo { font-size: 1rem; }
             .header-actions { flex-wrap: wrap; }
             .stats-bar { padding: 1rem; }
-            .stat-card { padding: 1rem; }
+            .stat-card { padding: 1rem; min-width: 100px; }
             .stat-card h3 { font-size: 1.5rem; }
             .tabs { padding: 0 1rem; }
             .tab { padding: 0.6rem 1rem; font-size: 0.85rem; }
@@ -132,11 +154,22 @@
             </div>
         </header>
         
-        <div class="stats-bar">
+        <div class="stats-bar" id="vendorStats">
             <div class="stat-card vendors">
                 <h3 id="vendorCount">-</h3>
-                <p>Registered Vendors</p>
+                <p>Total Vendors</p>
             </div>
+            <div class="stat-card paid">
+                <h3 id="paidCount">-</h3>
+                <p>Paid</p>
+            </div>
+            <div class="stat-card unpaid">
+                <h3 id="unpaidCount">-</h3>
+                <p>Unpaid</p>
+            </div>
+        </div>
+        
+        <div class="stats-bar" id="coordinatorStats" style="display: none;">
             <div class="stat-card coordinators">
                 <h3 id="coordinatorCount">-</h3>
                 <p>Coordinators</p>
@@ -145,14 +178,21 @@
         
         <div class="tabs">
             <button class="tab vendors active" onclick="switchTab('vendors')">🔨 Vendors</button>
-            <button class="tab coordinators" onclick="switchTab('coordinators')">📋 Coordinators</button>
+            <button class="tab coordinators" onclick="switchTab('coordinators')">📋 Volunteers</button>
         </div>
         
         <div class="table-container">
             <div class="table-header">
-                <div class="search-box">
-                    <span>🔍</span>
-                    <input type="text" id="searchInput" placeholder="Search leads..." oninput="filterTable()">
+                <div class="table-controls">
+                    <div class="search-box">
+                        <span>🔍</span>
+                        <input type="text" id="searchInput" placeholder="Search leads..." oninput="filterTable()">
+                    </div>
+                    <select class="filter-select" id="paidFilter" onchange="filterTable()">
+                        <option value="all">All Status</option>
+                        <option value="paid">Paid Only</option>
+                        <option value="unpaid">Unpaid Only</option>
+                    </select>
                 </div>
                 <span id="resultCount" style="font-size: 0.9rem; opacity: 0.7;"></span>
             </div>
@@ -183,6 +223,9 @@
             </div>
         </div>
     </div>
+    
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
 
     <script>
         const API_BASE = 'https://email-bot-server.micaiah-tasks.workers.dev';
@@ -255,9 +298,7 @@
                 vendorData = vendors;
                 coordinatorData = coordinators;
                 
-                document.getElementById('vendorCount').textContent = vendors.length;
-                document.getElementById('coordinatorCount').textContent = coordinators.length;
-                
+                updateStats();
                 renderTable();
             } catch (error) {
                 console.error('Load error:', error);
@@ -266,6 +307,18 @@
                 }
             }
             showLoading(false);
+        }
+        
+        function updateStats() {
+            const paidVendors = vendorData.filter(v => {
+                const meta = v.metadata ? (typeof v.metadata === 'string' ? JSON.parse(v.metadata) : v.metadata) : {};
+                return meta.paid === true;
+            }).length;
+            
+            document.getElementById('vendorCount').textContent = vendorData.length;
+            document.getElementById('paidCount').textContent = paidVendors;
+            document.getElementById('unpaidCount').textContent = vendorData.length - paidVendors;
+            document.getElementById('coordinatorCount').textContent = coordinatorData.length;
         }
         
         async function fetchSubscribers(listSlug) {
@@ -286,6 +339,15 @@
             document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
             document.querySelector(`.tab.${tab}`).classList.add('active');
             document.getElementById('searchInput').value = '';
+            document.getElementById('paidFilter').value = 'all';
+            
+            // Show/hide appropriate stats
+            document.getElementById('vendorStats').style.display = tab === 'vendors' ? 'flex' : 'none';
+            document.getElementById('coordinatorStats').style.display = tab === 'coordinators' ? 'flex' : 'none';
+            
+            // Show/hide paid filter
+            document.getElementById('paidFilter').style.display = tab === 'vendors' ? 'block' : 'none';
+            
             renderTable();
         }
         
@@ -308,19 +370,26 @@
             
             // Headers based on tab
             if (currentTab === 'vendors') {
-                thead.innerHTML = '<tr><th>Date</th><th>Name</th><th>Company</th><th>Email</th><th>Phone</th><th>Services</th></tr>';
+                thead.innerHTML = '<tr><th>Paid</th><th>Date</th><th>Name</th><th>Company</th><th>Email</th><th>Phone</th><th>Services</th></tr>';
             } else {
                 thead.innerHTML = '<tr><th>Date</th><th>Name</th><th>Email</th><th>Phone</th><th>Availability</th></tr>';
             }
             
             // Rows
-            tbody.innerHTML = data.map(sub => {
+            tbody.innerHTML = data.map((sub, index) => {
                 const meta = sub.metadata ? (typeof sub.metadata === 'string' ? JSON.parse(sub.metadata) : sub.metadata) : {};
                 const date = new Date(sub.subscribed_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
                 const name = sub.name || `${meta.first_name || ''} ${meta.last_name || ''}`.trim() || '-';
+                const isPaid = meta.paid === true;
                 
                 if (currentTab === 'vendors') {
-                    return `<tr>
+                    return `<tr data-paid="${isPaid}" data-email="${sub.email}">
+                        <td>
+                            <div class="paid-toggle">
+                                <div class="toggle-switch ${isPaid ? 'paid' : ''}" onclick="togglePaid('${sub.email}', ${!isPaid})"></div>
+                                <span class="paid-label ${isPaid ? 'yes' : 'no'}">${isPaid ? 'Yes' : 'No'}</span>
+                            </div>
+                        </td>
                         <td>${date}</td>
                         <td>${escapeHtml(name)}</td>
                         <td>${escapeHtml(meta.company_name || '-')}</td>
@@ -340,22 +409,68 @@
             }).join('');
             
             document.getElementById('resultCount').textContent = `${data.length} leads`;
+            filterTable();
+        }
+        
+        async function togglePaid(email, newStatus) {
+            try {
+                const response = await fetch(`${API_BASE}/api/mtc/update-status`, {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'X-MTC-Password': sessionPassword
+                    },
+                    body: JSON.stringify({ 
+                        email: email,
+                        list: VENDOR_LIST,
+                        paid: newStatus
+                    })
+                });
+                
+                if (response.ok) {
+                    // Update local data
+                    const vendor = vendorData.find(v => v.email === email);
+                    if (vendor) {
+                        const meta = vendor.metadata ? (typeof vendor.metadata === 'string' ? JSON.parse(vendor.metadata) : vendor.metadata) : {};
+                        meta.paid = newStatus;
+                        vendor.metadata = meta;
+                    }
+                    
+                    updateStats();
+                    renderTable();
+                    showToast(newStatus ? 'Marked as paid ✓' : 'Marked as unpaid', 'success');
+                } else {
+                    showToast('Failed to update status', 'error');
+                }
+            } catch (error) {
+                console.error('Update error:', error);
+                showToast('Connection error', 'error');
+            }
         }
         
         function filterTable() {
             const search = document.getElementById('searchInput').value.toLowerCase();
+            const paidFilter = document.getElementById('paidFilter').value;
             const rows = document.querySelectorAll('#tableBody tr');
             let visible = 0;
             
             rows.forEach(row => {
                 const text = row.textContent.toLowerCase();
-                const match = text.includes(search);
-                row.style.display = match ? '' : 'none';
-                if (match) visible++;
+                const isPaid = row.dataset.paid === 'true';
+                
+                let matchSearch = text.includes(search);
+                let matchPaid = paidFilter === 'all' || 
+                    (paidFilter === 'paid' && isPaid) || 
+                    (paidFilter === 'unpaid' && !isPaid);
+                
+                const show = matchSearch && matchPaid;
+                row.style.display = show ? '' : 'none';
+                if (show) visible++;
             });
             
             const total = currentTab === 'vendors' ? vendorData.length : coordinatorData.length;
-            document.getElementById('resultCount').textContent = search ? `${visible} of ${total} leads` : `${total} leads`;
+            const filtered = search || paidFilter !== 'all';
+            document.getElementById('resultCount').textContent = filtered ? `${visible} of ${total} leads` : `${total} leads`;
         }
         
         function exportCSV() {
@@ -365,11 +480,12 @@
             let csv = '';
             
             if (currentTab === 'vendors') {
-                csv = 'Date,First Name,Last Name,Company,Email,Phone,Services\n';
+                csv = 'Date,First Name,Last Name,Company,Email,Phone,Services,Paid\n';
                 data.forEach(sub => {
                     const meta = sub.metadata ? (typeof sub.metadata === 'string' ? JSON.parse(sub.metadata) : sub.metadata) : {};
                     const date = new Date(sub.subscribed_at).toLocaleDateString();
-                    csv += `"${date}","${meta.first_name || ''}","${meta.last_name || ''}","${meta.company_name || ''}","${sub.email}","${meta.phone || ''}","${meta.services || ''}"\n`;
+                    const paid = meta.paid === true ? 'Yes' : 'No';
+                    csv += `"${date}","${meta.first_name || ''}","${meta.last_name || ''}","${meta.company_name || ''}","${sub.email}","${meta.phone || ''}","${meta.services || ''}","${paid}"\n`;
                 });
             } else {
                 csv = 'Date,First Name,Last Name,Email,Phone,Availability\n';
@@ -401,6 +517,14 @@
         function escapeHtml(str) {
             if (!str) return '';
             return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
+        
+        function showToast(message, type = '') {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.className = 'toast ' + type;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
         }
         
         // Settings Modal
