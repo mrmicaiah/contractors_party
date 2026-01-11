@@ -40,6 +40,12 @@
         .info-card.fee-card h3 { color: var(--grass-green); }
         .fee-amount { font-family: 'Dela Gothic One', cursive; font-size: 2.5rem; color: var(--grass-green); margin: 0.5rem 0; }
         .fee-note { font-size: 0.9rem; color: var(--charcoal); opacity: 0.8; line-height: 1.5; }
+        .info-card.location-card { border-left-color: var(--sky-blue); }
+        .info-card.location-card h3 { color: var(--sky-blue); }
+        .location-address { font-size: 1rem; line-height: 1.6; margin-bottom: 0.75rem; }
+        .location-address strong { display: block; font-size: 1.1rem; color: var(--charcoal); }
+        .map-link { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--sky-blue); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+        .map-link:hover { text-decoration: underline; }
         .form-section { background: var(--white); border-radius: 20px; padding: 2rem 1.5rem; box-shadow: 0 12px 40px rgba(0,0,0,0.08); border-top: 5px solid var(--sunset-orange); }
         .form-section h2 { font-family: 'Dela Gothic One', cursive; font-size: 1.5rem; color: var(--grass-green); margin-bottom: 0.4rem; text-align: center; }
         .form-section > p { text-align: center; color: var(--charcoal); opacity: 0.7; margin-bottom: 1.5rem; font-size: 0.95rem; }
@@ -119,9 +125,18 @@
                 <div class="fee-amount">$250</div>
                 <p class="fee-note">Payment via Venmo after registration. Your spot is secured once payment is received.</p>
             </div>
-            <div class="info-card"><h3>📍 Your Setup</h3><ul><li>Park your work vehicle in your designated spot</li><li>Set up your table directly behind your vehicle</li><li>Use any tools or work-related items as props</li><li>Your display doesn't need to be elaborate</li><li>Keep your area professional and presentable</li></ul></div>
+            <div class="info-card location-card">
+                <h3>📍 Event Location</h3>
+                <p class="location-address">
+                    <strong>The Grid</strong>
+                    211 Taylor Lane Southeast<br>
+                    Owens Cross Roads, AL 35763
+                </p>
+                <a href="https://maps.google.com/?q=211+Taylor+Lane+Southeast,+Owens+Cross+Roads,+AL+35763" target="_blank" class="map-link">📍 Open in Google Maps</a>
+            </div>
+            <div class="info-card"><h3>🚗 Your Setup</h3><ul><li>Park your work vehicle in your designated spot</li><li>Set up your table directly behind your vehicle</li><li>Use any tools or work-related items as props</li><li>Your display doesn't need to be elaborate</li><li>Keep your area professional and presentable</li></ul></div>
             <div class="info-card"><h3>🎯 What to Expect</h3><ul><li>Face-to-face time with homeowners</li><li>Family-friendly atmosphere with entertainment</li><li>Live music and food trucks all day</li><li>Network with other local professionals</li><li>Support Space Camp for kids!</li></ul></div>
-            <div class="info-card"><h3>📅 Event Details</h3><ul><li><strong>Date:</strong> Saturday, April 18, 2026</li><li><strong>Location:</strong> TBA (outdoor venue)</li><li><strong>Weather:</strong> Outdoor event, weather permitting</li></ul></div>
+            <div class="info-card"><h3>📅 Event Details</h3><ul><li><strong>Date:</strong> Saturday, April 18, 2026</li><li><strong>Weather:</strong> Outdoor event, weather permitting</li></ul></div>
         </aside>
         <div class="form-section">
             <h2>Register Your Business</h2>

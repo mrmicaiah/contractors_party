@@ -37,6 +37,11 @@
         .instructions h3 { font-family: 'Dela Gothic One', cursive; font-size: 1rem; color: var(--sunset-orange); margin-bottom: 0.75rem; }
         .instructions ol { padding-left: 1.25rem; }
         .instructions li { margin-bottom: 0.5rem; font-size: 0.95rem; line-height: 1.5; }
+        .location-info { background: var(--cream); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.5rem; text-align: left; }
+        .location-info h3 { font-family: 'Dela Gothic One', cursive; font-size: 0.95rem; color: var(--grass-green); margin-bottom: 0.5rem; }
+        .location-info p { font-size: 0.9rem; line-height: 1.5; color: var(--charcoal); }
+        .completed-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: var(--grass-green); color: var(--white); padding: 1rem 2rem; border-radius: 50px; font-size: 1rem; font-weight: 700; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 15px rgba(45, 90, 39, 0.3); margin-top: 0.5rem; }
+        .completed-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(45, 90, 39, 0.4); }
         .back-link { display: inline-block; margin-top: 1rem; color: var(--charcoal); opacity: 0.7; text-decoration: none; font-size: 0.9rem; }
         .back-link:hover { opacity: 1; color: var(--sunset-orange); }
         footer { background: var(--charcoal); color: var(--white); padding: 2rem 1.5rem 1rem; text-align: center; }
@@ -90,10 +95,17 @@
                     <li>Log in to your Venmo account</li>
                     <li>The amount ($250) and note will be pre-filled</li>
                     <li>Review and confirm your payment</li>
+                    <li>Return here and click "I've Completed Payment"</li>
                 </ol>
             </div>
             
-            <p style="font-size: 0.9rem; opacity: 0.7;">Questions? Contact us and we'll help you out!</p>
+            <div class="location-info">
+                <h3>📍 Event Location</h3>
+                <p><strong>The Grid</strong><br>211 Taylor Lane Southeast<br>Owens Cross Roads, AL 35763</p>
+            </div>
+            
+            <a href="vendor-thank-you.html" class="completed-btn">✓ I've Completed Payment</a>
+            <br>
             <a href="index.html" class="back-link">← Back to Home</a>
         </div>
     </main>

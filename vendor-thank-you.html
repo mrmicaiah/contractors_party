@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You! | Meet the Contractors</title>
+    <meta name="description" content="Thank you for registering as a vendor for Meet the Contractors!">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --sunset-orange: #FF6B35; --golden-yellow: #F7C948; --grass-green: #2D5A27; --sky-blue: #4A90D9; --cream: #FFF8E7; --charcoal: #2C2C2C; --white: #FFFFFF; --success: #28A745; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--charcoal); min-height: 100vh; display: flex; flex-direction: column; }
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0.75rem 1.5rem; display: flex; justify-content: space-between; align-items: center; background: rgba(255, 248, 231, 0.95); backdrop-filter: blur(10px); border-bottom: 3px solid var(--sunset-orange); }
+        .nav-brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+        .grid-logo { height: 45px; width: auto; }
+        .logo-text { display: flex; flex-direction: column; }
+        .logo { font-family: 'Dela Gothic One', cursive; font-size: 1rem; color: var(--sunset-orange); text-decoration: none; line-height: 1.1; }
+        .logo span { color: var(--grass-green); }
+        .logo-subtitle { font-size: 0.6rem; color: var(--charcoal); opacity: 0.7; line-height: 1.2; }
+        .esp-badge { display: inline-block; background: var(--grass-green); color: var(--white); font-size: 0.5rem; padding: 0.15rem 0.35rem; border-radius: 3px; font-weight: 700; margin-left: 0.25rem; vertical-align: middle; }
+        .thank-you-container { flex: 1; display: flex; align-items: center; justify-content: center; padding: 6rem 1.5rem 3rem; }
+        .thank-you-card { background: var(--white); border-radius: 24px; padding: 2.5rem; max-width: 550px; width: 100%; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.1); border-top: 6px solid var(--success); }
+        .success-icon { font-size: 5rem; margin-bottom: 1rem; }
+        .thank-you-card h1 { font-family: 'Dela Gothic One', cursive; font-size: 2rem; color: var(--grass-green); margin-bottom: 0.5rem; }
+        .thank-you-card .subtitle { color: var(--charcoal); opacity: 0.8; margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.5; }
+        .event-details { background: var(--cream); border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem; text-align: left; }
+        .event-details h3 { font-family: 'Dela Gothic One', cursive; font-size: 1.1rem; color: var(--sunset-orange); margin-bottom: 1rem; text-align: center; }
+        .detail-row { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.75rem; }
+        .detail-row:last-child { margin-bottom: 0; }
+        .detail-icon { font-size: 1.3rem; flex-shrink: 0; }
+        .detail-text { font-size: 0.95rem; line-height: 1.5; }
+        .detail-text strong { display: block; color: var(--grass-green); }
+        .map-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--sky-blue); text-decoration: none; font-weight: 600; font-size: 0.9rem; margin-top: 0.25rem; }
+        .map-link:hover { text-decoration: underline; }
+        .next-steps { background: rgba(247, 201, 72, 0.15); border: 2px solid var(--golden-yellow); border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem; text-align: left; }
+        .next-steps h3 { font-family: 'Dela Gothic One', cursive; font-size: 1rem; color: var(--sunset-orange); margin-bottom: 0.75rem; }
+        .next-steps ul { padding-left: 1.25rem; }
+        .next-steps li { margin-bottom: 0.5rem; font-size: 0.95rem; line-height: 1.5; }
+        .home-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: var(--grass-green); color: var(--white); padding: 1rem 2rem; border-radius: 50px; font-size: 1rem; font-weight: 700; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 15px rgba(45, 90, 39, 0.3); }
+        .home-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(45, 90, 39, 0.4); }
+        footer { background: var(--charcoal); color: var(--white); padding: 2rem 1.5rem 1rem; text-align: center; }
+        .footer-logo { font-family: 'Dela Gothic One', cursive; font-size: 1.25rem; color: var(--golden-yellow); margin-bottom: 0.25rem; }
+        .footer-subtitle { font-size: 0.7rem; opacity: 0.6; margin-bottom: 0.75rem; }
+        .footer-note { font-size: 0.8rem; opacity: 0.5; }
+        @media (max-width: 768px) {
+            nav { padding: 0.6rem 1rem; }
+            .grid-logo { height: 35px; }
+            .logo { font-size: 0.85rem; }
+            .logo-subtitle { font-size: 0.5rem; }
+            .thank-you-container { padding: 5rem 1rem 2rem; }
+            .thank-you-card { padding: 1.75rem 1.25rem; }
+            .thank-you-card h1 { font-size: 1.6rem; }
+            .success-icon { font-size: 4rem; }
+            .event-details { padding: 1.25rem; }
+            .detail-row { gap: 0.6rem; }
+            .detail-icon { font-size: 1.2rem; }
+            .detail-text { font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="nav-brand">
+            <img src="grid-logo.webp" alt="The Grid Logo" class="grid-logo">
+            <div class="logo-text">
+                <div class="logo">MEET THE<span> CONTRACTORS</span><span class="esp-badge">ESP</span></div>
+                <div class="logo-subtitle">& Space Camp Scholarship Fundraiser</div>
+            </div>
+        </a>
+    </nav>
+    
+    <main class="thank-you-container">
+        <div class="thank-you-card">
+            <div class="success-icon">🎉</div>
+            <h1>You're All Set!</h1>
+            <p class="subtitle">Thank you for registering as a vendor. We're excited to have you at Meet the Contractors!</p>
+            
+            <div class="event-details">
+                <h3>📋 Event Details</h3>
+                <div class="detail-row">
+                    <span class="detail-icon">📅</span>
+                    <div class="detail-text"><strong>Date</strong>Saturday, April 18, 2026</div>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-icon">📍</span>
+                    <div class="detail-text">
+                        <strong>Location</strong>
+                        The Grid<br>
+                        211 Taylor Lane Southeast<br>
+                        Owens Cross Roads, AL 35763
+                        <a href="https://maps.google.com/?q=211+Taylor+Lane+Southeast,+Owens+Cross+Roads,+AL+35763" target="_blank" class="map-link">📍 Open in Maps</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="next-steps">
+                <h3>📝 What Happens Next</h3>
+                <ul>
+                    <li>You'll receive a confirmation email with more details</li>
+                    <li>We'll send setup instructions closer to the event</li>
+                    <li>Arrive early on event day to set up your booth</li>
+                </ul>
+            </div>
+            
+            <a href="index.html" class="home-btn">🏠 Back to Home</a>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-logo">🎪 MEET THE CONTRACTORS</div>
+        <div class="footer-subtitle">& Space Camp Scholarship Fundraiser</div>
+        <p class="footer-note">© 2026 Meet the Contractors. All proceeds benefit Space Camp through the Pace program.</p>
+    </footer>
+</body>
+</html>
