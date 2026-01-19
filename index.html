@@ -84,6 +84,20 @@
         .cause-content p { font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem; opacity: 0.95; }
         .admission-badge { display: inline-block; background: var(--golden-yellow); color: var(--charcoal); padding: 1.25rem 2rem; border-radius: 16px; font-size: 1.3rem; font-weight: 700; }
         .admission-badge span { display: block; font-size: 0.85rem; font-weight: 500; margin-top: 0.4rem; opacity: 0.8; }
+        .sponsors-section { padding: 4rem 1.5rem; background: var(--white); }
+        .sponsors-section .section-header { margin-bottom: 2rem; }
+        .sponsors-section .section-header p { font-size: 0.95rem; }
+        .sponsor-tier { margin-bottom: 2rem; }
+        .sponsor-tier:last-child { margin-bottom: 0; }
+        .sponsor-label { text-align: center; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--charcoal); opacity: 0.5; margin-bottom: 1rem; font-weight: 600; }
+        .main-sponsor { display: flex; justify-content: center; align-items: center; }
+        .main-sponsor a { display: block; padding: 1.5rem 2rem; background: var(--cream); border-radius: 16px; transition: transform 0.3s, box-shadow 0.3s; }
+        .main-sponsor a:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .main-sponsor img { height: 100px; width: auto; display: block; }
+        .other-sponsors { display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap; }
+        .other-sponsors a { display: block; padding: 1rem 1.5rem; background: var(--cream); border-radius: 12px; transition: transform 0.3s, box-shadow 0.3s; }
+        .other-sponsors a:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+        .other-sponsors img { height: 60px; width: auto; display: block; }
         .cta-section { padding: 4rem 1.5rem; background: var(--cream); }
         .cta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
         .cta-card { background: var(--white); border-radius: 20px; padding: 2rem 1.5rem; text-align: center; box-shadow: 0 8px 30px rgba(0,0,0,0.08); border-top: 5px solid var(--sunset-orange); }
@@ -139,6 +153,9 @@
             .cause-content p { font-size: 1rem; }
             .admission-badge { padding: 1rem 1.5rem; font-size: 1.1rem; }
             .admission-badge span { font-size: 0.8rem; }
+            .sponsors-section { padding: 3rem 1rem; }
+            .main-sponsor img { height: 80px; }
+            .other-sponsors img { height: 50px; }
             .cta-section { padding: 3rem 1rem; }
             .cta-grid { grid-template-columns: 1fr; gap: 1rem; }
             .cta-card { padding: 1.5rem 1.25rem; }
@@ -173,43 +190,43 @@
             <li><a href="volunteer-signup.html">Volunteers</a></li>
             <li><a href="vendor-registration.html" class="nav-cta">Register Now</a></li>
         </ul>
-        <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+        <button class="mobile-menu-btn" onclick="toggleMenu()">&#9776;</button>
     </nav>
     <section class="hero">
         <div class="sun"></div>
         <div class="grass"></div>
         <div class="hero-content">
-            <div class="event-badge">🎉 A Unique Home Show Experience</div>
+            <div class="event-badge">&#127881; A Unique Home Show Experience</div>
             <h1>MEET THE CONTRACTORS</h1>
             <p class="hero-tagline">& Space Camp Scholarship Fundraiser</p>
             <h2>Outdoor Home Show & Family Fun</h2>
             <div class="event-date-wrapper">
                 <div class="event-date" onclick="toggleCalendarDropdown(event)">
-                    <span class="date-icon">📅</span>
+                    <span class="date-icon">&#128197;</span>
                     <div class="date-text">
                         <strong>April 18, 2026</strong>
-                        <span>Saturday • All Day Event</span>
+                        <span>Saturday - All Day Event</span>
                         <span class="add-to-calendar-text">+ Add to Calendar</span>
                     </div>
                 </div>
                 <div class="calendar-dropdown" id="calendarDropdown">
-                    <a href="#" onclick="addToGoogleCalendar(event)"><span class="icon">📆</span> Google Calendar</a>
-                    <a href="#" onclick="addToAppleCalendar(event)"><span class="icon">🍎</span> Apple Calendar</a>
-                    <a href="#" onclick="addToOutlookCalendar(event)"><span class="icon">📧</span> Outlook Calendar</a>
-                    <a href="#" onclick="downloadICS(event)"><span class="icon">📥</span> Download .ics</a>
+                    <a href="#" onclick="addToGoogleCalendar(event)"><span class="icon">&#128198;</span> Google Calendar</a>
+                    <a href="#" onclick="addToAppleCalendar(event)"><span class="icon">&#127822;</span> Apple Calendar</a>
+                    <a href="#" onclick="addToOutlookCalendar(event)"><span class="icon">&#128231;</span> Outlook Calendar</a>
+                    <a href="#" onclick="downloadICS(event)"><span class="icon">&#128229;</span> Download .ics</a>
                 </div>
             </div>
             <div class="hero-buttons">
-                <a href="vendor-registration.html" class="btn btn-primary">🔨 Register as Vendor</a>
-                <a href="volunteer-signup.html" class="btn btn-secondary">📋 Become a Volunteer</a>
+                <a href="vendor-registration.html" class="btn btn-primary">&#128296; Register as Vendor</a>
+                <a href="volunteer-signup.html" class="btn btn-secondary">&#128203; Become a Volunteer</a>
             </div>
         </div>
     </section>
-    <div class="weather-notice"><span>☀️</span> This is an outdoor event — weather permitting. We're planning for sunshine and fun!</div>
+    <div class="weather-notice"><span>&#9728;&#65039;</span> This is an outdoor event - weather permitting. We're planning for sunshine and fun!</div>
     <div class="location-banner">
         <div class="location-banner-content">
-            <span class="location-icon">📍</span>
-            <span class="location-text"><strong>The Grid</strong> • 211 Taylor Lane SE, Owens Cross Roads, AL 35763 • <a href="https://maps.google.com/?q=211+Taylor+Lane+Southeast,+Owens+Cross+Roads,+AL+35763" target="_blank">Get Directions</a></span>
+            <span class="location-icon">&#128205;</span>
+            <span class="location-text"><strong>The Grid</strong> - 211 Taylor Lane SE, Owens Cross Roads, AL 35763 - <a href="https://maps.google.com/?q=211+Taylor+Lane+Southeast,+Owens+Cross+Roads,+AL+35763" target="_blank">Get Directions</a></span>
         </div>
     </div>
     <section class="info-section" id="about">
@@ -223,33 +240,49 @@
     <section class="info-section" id="highlights" style="padding-top: 0;">
         <div class="container">
             <div class="features-grid">
-                <div class="feature-card"><span class="feature-icon">🎸</span><h3>Live Music</h3><p>Enjoy live bands playing throughout the day while you explore vendor booths.</p></div>
-                <div class="feature-card"><span class="feature-icon">🎨</span><h3>Face Painting</h3><p>Bring the kids! Professional face painting keeps little ones entertained.</p></div>
-                <div class="feature-card"><span class="feature-icon">🍔</span><h3>Food Trucks</h3><p>Delicious food trucks on site all day. Grab a bite between conversations.</p></div>
-                <div class="feature-card"><span class="feature-icon">🏠</span><h3>Meet Contractors</h3><p>Connect with local home improvement professionals. See their work up close.</p></div>
+                <div class="feature-card"><span class="feature-icon">&#127928;</span><h3>Live Music</h3><p>Enjoy live bands playing throughout the day while you explore vendor booths.</p></div>
+                <div class="feature-card"><span class="feature-icon">&#127912;</span><h3>Face Painting</h3><p>Bring the kids! Professional face painting keeps little ones entertained.</p></div>
+                <div class="feature-card"><span class="feature-icon">&#127828;</span><h3>Food Trucks</h3><p>Delicious food trucks on site all day. Grab a bite between conversations.</p></div>
+                <div class="feature-card"><span class="feature-icon">&#127968;</span><h3>Meet Contractors</h3><p>Connect with local home improvement professionals. See their work up close.</p></div>
             </div>
         </div>
     </section>
     <section class="cause-section">
         <div class="cause-content">
-            <h2>🚀 Supporting a Great Cause</h2>
+            <h2>&#128640; Supporting a Great Cause</h2>
             <p>All proceeds go toward sending kids to <strong>Space Camp</strong> through the Pace program. Your admission helps make dreams come true!</p>
             <div class="admission-badge">$250 Admission<span>100% goes to Space Camp scholarships</span></div>
+        </div>
+    </section>
+    <section class="sponsors-section" id="sponsors">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Sponsors</h2>
+                <p>Thank you to our amazing sponsors for making this event possible!</p>
+            </div>
+            <div class="sponsor-tier">
+                <div class="sponsor-label">Presenting Sponsor</div>
+                <div class="main-sponsor">
+                    <a href="https://mrgutter.com" target="_blank" rel="noopener">
+                        <img src="https://res.cloudinary.com/dxzw1zwez/image/upload/h_120/q_auto/f_auto/mr_gutter_blue_complete_vr9fak" alt="Mr. Gutter">
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
     <section class="cta-section">
         <div class="container">
             <div class="section-header"><h2>Get Involved</h2><p>Whether you're a contractor or want to help volunteer, we'd love to have you!</p></div>
             <div class="cta-grid">
-                <div class="cta-card"><h3>🔨 Vendors & Contractors</h3><p>Park your work vehicle, set up your table, and showcase your skills to homeowners. Bring your tools as props!</p><a href="vendor-registration.html" class="btn btn-primary">Register as Vendor</a></div>
-                <div class="cta-card"><h3>📋 Event Volunteers</h3><p>Help us make this event amazing! We need volunteers for setup, coordination, and ensuring things run smoothly.</p><a href="volunteer-signup.html" class="btn btn-primary" style="background: var(--sky-blue);">Become a Volunteer</a></div>
+                <div class="cta-card"><h3>&#128296; Vendors & Contractors</h3><p>Park your work vehicle, set up your table, and showcase your skills to homeowners. Bring your tools as props!</p><a href="vendor-registration.html" class="btn btn-primary">Register as Vendor</a></div>
+                <div class="cta-card"><h3>&#128203; Event Volunteers</h3><p>Help us make this event amazing! We need volunteers for setup, coordination, and ensuring things run smoothly.</p><a href="volunteer-signup.html" class="btn btn-primary" style="background: var(--sky-blue);">Become a Volunteer</a></div>
             </div>
         </div>
     </section>
     <footer>
-        <div class="footer-logo">🎪 MEET THE CONTRACTORS</div>
+        <div class="footer-logo">&#127914; MEET THE CONTRACTORS</div>
         <div class="footer-subtitle">& Space Camp Scholarship Fundraiser</div>
-        <p class="footer-tagline">Outdoor Home Show • April 18, 2026 • The Grid, Owens Cross Roads, AL</p>
+        <p class="footer-tagline">Outdoor Home Show - April 18, 2026 - The Grid, Owens Cross Roads, AL</p>
         <div class="footer-links"><a href="index.html">Home</a><a href="vendor-registration.html">Vendor Registration</a><a href="volunteer-signup.html">Volunteer Signup</a></div>
         <p class="footer-note">© 2026 Meet the Contractors. All proceeds benefit Space Camp through the Pace program.</p>
     </footer>
@@ -259,10 +292,10 @@
         const eventDetails = { title: 'Meet the Contractors - Outdoor Home Show', description: 'Join us for Meet the Contractors outdoor home show! Live music, food trucks, face painting, and connect with local home improvement professionals. All proceeds benefit Space Camp for kids through the Pace program.', location: 'The Grid, 211 Taylor Lane SE, Owens Cross Roads, AL 35763', startDate: '2026-04-18', startTime: '09:00:00', endDate: '2026-04-18', endTime: '17:00:00' };
         function toggleCalendarDropdown(e) { e.stopPropagation(); document.getElementById('calendarDropdown').classList.toggle('active'); }
         document.addEventListener('click', function(e) { const dropdown = document.getElementById('calendarDropdown'); const dateWrapper = document.querySelector('.event-date-wrapper'); if (!dateWrapper.contains(e.target)) { dropdown.classList.remove('active'); } });
-        function addToGoogleCalendar(e) { e.preventDefault(); const start = eventDetails.startDate.replace(/-/g, '') + 'T' + eventDetails.startTime.replace(/:/g, ''); const end = eventDetails.endDate.replace(/-/g, '') + 'T' + eventDetails.endTime.replace(/:/g, ''); window.open(`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventDetails.title)}&dates=${start}/${end}&details=${encodeURIComponent(eventDetails.description)}&location=${encodeURIComponent(eventDetails.location)}`, '_blank'); document.getElementById('calendarDropdown').classList.remove('active'); }
+        function addToGoogleCalendar(e) { e.preventDefault(); const start = eventDetails.startDate.replace(/-/g, '') + 'T' + eventDetails.startTime.replace(/:/g, ''); const end = eventDetails.endDate.replace(/-/g, '') + 'T' + eventDetails.endTime.replace(/:/g, ''); window.open('https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + encodeURIComponent(eventDetails.title) + '&dates=' + start + '/' + end + '&details=' + encodeURIComponent(eventDetails.description) + '&location=' + encodeURIComponent(eventDetails.location), '_blank'); document.getElementById('calendarDropdown').classList.remove('active'); }
         function addToAppleCalendar(e) { e.preventDefault(); downloadICS(e); }
-        function addToOutlookCalendar(e) { e.preventDefault(); window.open(`https://outlook.live.com/calendar/0/deeplink/compose?subject=${encodeURIComponent(eventDetails.title)}&startdt=${eventDetails.startDate}T${eventDetails.startTime}&enddt=${eventDetails.endDate}T${eventDetails.endTime}&body=${encodeURIComponent(eventDetails.description)}&location=${encodeURIComponent(eventDetails.location)}`, '_blank'); document.getElementById('calendarDropdown').classList.remove('active'); }
-        function downloadICS(e) { e.preventDefault(); const fmt = (d, t) => d.replace(/-/g, '') + 'T' + t.replace(/:/g, ''); const ics = `BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nDTSTART:${fmt(eventDetails.startDate, eventDetails.startTime)}\nDTEND:${fmt(eventDetails.endDate, eventDetails.endTime)}\nSUMMARY:${eventDetails.title}\nDESCRIPTION:${eventDetails.description}\nLOCATION:${eventDetails.location}\nEND:VEVENT\nEND:VCALENDAR`; const blob = new Blob([ics], { type: 'text/calendar' }); const link = document.createElement('a'); link.href = URL.createObjectURL(blob); link.download = 'meet-the-contractors-2026.ics'; link.click(); document.getElementById('calendarDropdown').classList.remove('active'); }
+        function addToOutlookCalendar(e) { e.preventDefault(); window.open('https://outlook.live.com/calendar/0/deeplink/compose?subject=' + encodeURIComponent(eventDetails.title) + '&startdt=' + eventDetails.startDate + 'T' + eventDetails.startTime + '&enddt=' + eventDetails.endDate + 'T' + eventDetails.endTime + '&body=' + encodeURIComponent(eventDetails.description) + '&location=' + encodeURIComponent(eventDetails.location), '_blank'); document.getElementById('calendarDropdown').classList.remove('active'); }
+        function downloadICS(e) { e.preventDefault(); var fmt = function(d, t) { return d.replace(/-/g, '') + 'T' + t.replace(/:/g, ''); }; var ics = 'BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nDTSTART:' + fmt(eventDetails.startDate, eventDetails.startTime) + '\nDTEND:' + fmt(eventDetails.endDate, eventDetails.endTime) + '\nSUMMARY:' + eventDetails.title + '\nDESCRIPTION:' + eventDetails.description + '\nLOCATION:' + eventDetails.location + '\nEND:VEVENT\nEND:VCALENDAR'; var blob = new Blob([ics], { type: 'text/calendar' }); var link = document.createElement('a'); link.href = URL.createObjectURL(blob); link.download = 'meet-the-contractors-2026.ics'; link.click(); document.getElementById('calendarDropdown').classList.remove('active'); }
     </script>
 </body>
 </html>
