@@ -26,23 +26,16 @@
         .success-icon { font-size: 4rem; margin-bottom: 1rem; }
         .payment-card h1 { font-family: 'Dela Gothic One', cursive; font-size: 1.8rem; color: var(--grass-green); margin-bottom: 0.5rem; }
         .payment-card .subtitle { color: var(--charcoal); opacity: 0.7; margin-bottom: 2rem; font-size: 1rem; }
-        .payment-box { background: linear-gradient(135deg, #008CFF 0%, #0070CC 100%); border-radius: 16px; padding: 2rem; margin-bottom: 1.5rem; color: var(--white); }
+        .payment-box { background: linear-gradient(135deg, var(--grass-green) 0%, #3d7a35 100%); border-radius: 16px; padding: 2rem; margin-bottom: 1.5rem; color: var(--white); }
         .payment-box h2 { font-family: 'Dela Gothic One', cursive; font-size: 1.2rem; margin-bottom: 0.5rem; }
         .payment-amount { font-size: 3rem; font-weight: 700; margin: 0.5rem 0; }
-        .payment-box p { opacity: 0.9; font-size: 0.9rem; }
-        .venmo-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.75rem; background: var(--white); color: #008CFF; padding: 1rem 2.5rem; border-radius: 50px; font-size: 1.2rem; font-weight: 700; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.2); margin-top: 1rem; }
-        .venmo-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
-        .venmo-btn svg { width: 28px; height: 28px; }
-        .instructions { background: rgba(247, 201, 72, 0.15); border: 2px solid var(--golden-yellow); border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem; text-align: left; }
-        .instructions h3 { font-family: 'Dela Gothic One', cursive; font-size: 1rem; color: var(--sunset-orange); margin-bottom: 0.75rem; }
-        .instructions ol { padding-left: 1.25rem; }
-        .instructions li { margin-bottom: 0.5rem; font-size: 0.95rem; line-height: 1.5; }
+        .payment-box p { opacity: 0.9; font-size: 0.9rem; margin-bottom: 1.5rem; }
+        .stripe-button-container { display: flex; justify-content: center; margin-top: 1rem; }
         .location-info { background: var(--cream); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.5rem; text-align: left; }
         .location-info h3 { font-family: 'Dela Gothic One', cursive; font-size: 0.95rem; color: var(--grass-green); margin-bottom: 0.5rem; }
         .location-info p { font-size: 0.9rem; line-height: 1.5; color: var(--charcoal); }
-        .completed-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: var(--grass-green); color: var(--white); padding: 1rem 2rem; border-radius: 50px; font-size: 1rem; font-weight: 700; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 15px rgba(45, 90, 39, 0.3); margin-top: 0.5rem; }
-        .completed-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(45, 90, 39, 0.4); }
-        .back-link { display: inline-block; margin-top: 1rem; color: var(--charcoal); opacity: 0.7; text-decoration: none; font-size: 0.9rem; }
+        .secure-note { display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--charcoal); opacity: 0.6; font-size: 0.85rem; margin-top: 1rem; }
+        .back-link { display: inline-block; margin-top: 1.5rem; color: var(--charcoal); opacity: 0.7; text-decoration: none; font-size: 0.9rem; }
         .back-link:hover { opacity: 1; color: var(--sunset-orange); }
         footer { background: var(--charcoal); color: var(--white); padding: 2rem 1.5rem 1rem; text-align: center; }
         .footer-logo { font-family: 'Dela Gothic One', cursive; font-size: 1.25rem; color: var(--golden-yellow); margin-bottom: 0.25rem; }
@@ -57,7 +50,6 @@
             .payment-card { padding: 1.75rem 1.25rem; }
             .payment-card h1 { font-size: 1.5rem; }
             .payment-amount { font-size: 2.5rem; }
-            .venmo-btn { padding: 0.9rem 2rem; font-size: 1.1rem; }
         }
     </style>
 </head>
@@ -81,22 +73,15 @@
             <div class="payment-box">
                 <h2>Vendor Registration Fee</h2>
                 <div class="payment-amount">$250</div>
-                <p>Pay via Venmo to complete registration</p>
-                <a href="https://venmo.com/DunfordR21?txn=pay&amount=250&note=MTC-Vendor-Registration" target="_blank" class="venmo-btn">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.5 2c.998 1.676 1.5 3.395 1.5 5.114c0 5.006-4.257 11.483-7.714 16.286H5.286L2 3.286l7.371-.643l1.286 10.071c1.285-2.228 2.828-5.828 2.828-8.228c0-1.629-.457-2.743-1.029-3.657L19.5 2z"/></svg>
-                    Pay with Venmo
-                </a>
-            </div>
-            
-            <div class="instructions">
-                <h3>📱 How to Pay</h3>
-                <ol>
-                    <li>Click the "Pay with Venmo" button above</li>
-                    <li>Log in to your Venmo account</li>
-                    <li>The amount ($250) and note will be pre-filled</li>
-                    <li>Review and confirm your payment</li>
-                    <li>Return here and click "I've Completed Payment"</li>
-                </ol>
+                <p>Click below to complete your secure payment</p>
+                <div class="stripe-button-container">
+                    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+                    <stripe-buy-button
+                        buy-button-id="buy_btn_1SthEfARvO4hHwSePENRkeBX"
+                        publishable-key="pk_live_51StfozARvO4hHwSeJ5HNkADtPFmhOBNC5YsgpOVhGiZGbqVs3GnkJaEa2MC18J3yhEzFL1NpqhV7P3Pgws36nFlE00ZfRWtEXb"
+                    >
+                    </stripe-buy-button>
+                </div>
             </div>
             
             <div class="location-info">
@@ -104,8 +89,8 @@
                 <p><strong>The Grid</strong><br>211 Taylor Lane Southeast<br>Owens Cross Roads, AL 35763</p>
             </div>
             
-            <a href="vendor-thank-you.html" class="completed-btn">✓ I've Completed Payment</a>
-            <br>
+            <p class="secure-note">🔒 Secure payment powered by Stripe</p>
+            
             <a href="index.html" class="back-link">← Back to Home</a>
         </div>
     </main>
